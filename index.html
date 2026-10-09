@@ -123,6 +123,7 @@ kbd{background:var(--in);border:1px solid var(--bd);border-bottom-width:2px;bord
 .it{color:var(--mut);letter-spacing:.3em;text-transform:uppercase;font-size:12px;animation:up .8s .4s both;text-align:center}
 .ibar{width:150px;height:3px;border-radius:3px;background:rgba(255,255,255,.1);overflow:hidden}.ibar i{display:block;height:100%;background:var(--am);transform-origin:left;animation:ld 1.4s ease-out both}@keyframes ld{from{transform:scaleX(0)}}
 #c.on{grid-template-columns:minmax(0,820px)}
+.btn:disabled,input:disabled,textarea:disabled{opacity:.4;cursor:not-allowed}.btn:disabled:hover{transform:none;filter:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 8px 22px rgba(255,150,40,.28)}.btn.ghost:disabled:hover{box-shadow:none}.cp:disabled{opacity:.4;cursor:not-allowed}.cp:disabled:hover{background:rgba(255,194,51,.12);color:var(--am);transform:none;box-shadow:none}
 </style></head><body data-vm="p">
 <div id="intro"><div class="ib"></div><div class="it">Openbaar Vervoer Benelux</div><div class="ibar"><i></i></div></div>
 <div class="bg"><div class="cur"></div><div id="stars"></div></div>
@@ -149,7 +150,7 @@ kbd{background:var(--in);border:1px solid var(--bd);border-bottom-width:2px;bord
 <div class="card"><div class="out" id="s_o"></div></div></section>
 
 <section class="panel" id="t">
-<div class="card"><label>Soort training</label><select id="t_k"><option value="Bus">Bus</option><option value="Taxi">Taxi</option></select>
+<div class="card"><label>Soort training</label><select id="t_k"><option value="Bus">Bus</option><option value="Taxi">Taxi</option><option value="Trident">Trident</option></select>
 <label>Datum</label><div class="row" style="align-items:stretch"><input id="t_d" type="date" style="flex:2"><button class="btn ghost" data-day="0" style="margin:0;padding:8px">Vandaag</button><button class="btn ghost" data-day="1" style="margin:0;padding:8px">Morgen</button></div>
 <div class="row"><div><label>Starttijd</label><input id="t_s" type="time" value="18:05"></div><div><label>Duur (minuten)</label><input id="t_dur" type="number" min="5" step="5" value="30"></div></div>
 <div class="stat"><span id="t_el">Eindtijd</span><b id="t_e"></b></div><button class="btn ghost" data-clear="t">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Kies de soort training, de datum (Vandaag en Morgen met één klik), de starttijd en de duur. Het verzamelpunt per soort stel je in bij Instellingen.</p></details></div>
@@ -252,7 +253,7 @@ function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clear
 document.addEventListener('click',async e=>{
   const b=e.target.closest('.btn,.cp');
   if(b){const r=document.createElement('i'),k=b.getBoundingClientRect();r.className='rip';r.style.left=e.clientX-k.left+'px';r.style.top=e.clientY-k.top+'px';b.appendChild(r);setTimeout(()=>r.remove(),600)}
-  const vb=e.target.closest('.vt button');if(vb){if(vb.dataset.nv){$('n').dataset.nv=vb.dataset.nv;if(vb.dataset.nv==='e')$('n_b').focus()}else document.body.dataset.vm=vb.dataset.v;return}
+  const vb=e.target.closest('.vt button');if(vb){if(vb.dataset.nv){if(!curN())return;$('n').dataset.nv=vb.dataset.nv;if(vb.dataset.nv==='e')$('n_b').focus()}else document.body.dataset.vm=vb.dataset.v;return}
   const g=e.target.closest('[data-go]');if(g){go(g.dataset.go);return}
   const sv=e.target.closest('[data-s]'),so=sv&&sv.closest('.out');
   if(so){const x=so._a[+sv.dataset.s];if(x){nadd((NN[so.id[0]]||'Bericht')+' '+new Date().toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'}),x.txt);toast('Bewaard in Notepad')}return}
@@ -429,9 +430,15 @@ function npaint(){const v=$('n_b').value;$('n_c').textContent=v.length+'/2000';$
 function nlist(){dash();
   const f=$('n_q').value.toLowerCase();
   const rows=NOTES.filter(n=>(n.t+' '+n.b).toLowerCase().includes(f)).sort((a,b)=>b.u-a.u);
-  $('n_l').innerHTML=rows.map(n=>`<div class="ni${n.id===NID?' on':''}" data-id="${n.id}"><b>${esc(n.t||'Naamloze notitie')}</b><small>${esc((n.b.split('\n').find(l=>l.trim())||'Leeg').slice(0,60))} · ${new Date(n.u).toLocaleDateString('nl-NL')}</small></div>`).join('')||'<div class="empty">Geen notities gevonden.</div>';
+  $('n_l').innerHTML=rows.map(n=>`<div class="ni${n.id===NID?' on':''}" data-id="${n.id}"><b>${esc(n.t||'Naamloze notitie')}</b><small>${esc((n.b.split('\n').find(l=>l.trim())||'Leeg').slice(0,60))} · ${new Date(n.u).toLocaleDateString('nl-NL')}</small></div>`).join('')||'<div class="empty">'+(NOTES.length?'Geen notities gevonden.':'Nog geen notities.')+'</div>';
 }
-function nsel(id){NID=id;const n=curN();$('n_t').value=n?n.t:'';$('n_b').value=n?n.b:'';npaint();$('n').dataset.nv=n&&n.b.trim()?'p':'e';nstat(n?'Opgeslagen om '+ntime(n.u):'');nlist()}
+function nsel(id){
+  NID=id;const n=curN();$('n_t').value=n?n.t:'';$('n_b').value=n?n.b:'';npaint();
+  ['n_t','n_b','n_save','n_copy','n_dl','n_del'].forEach(i=>{$(i).disabled=!n});
+  if(n){$('n').dataset.nv=n.b.trim()?'p':'e';nstat('Opgeslagen om '+ntime(n.u))}
+  else{$('n').dataset.nv='p';$('n_pv').innerHTML='<div class="empty">Je hebt nog geen notities.<br>Klik op ＋ Nieuwe notitie om te beginnen.</div>';$('n_c').textContent='0/2000';nstat('')}
+  nlist();
+}
 function nadd(t='',b=''){const n={id:nid(),t,b,u:Date.now()};NOTES.push(n);nsave();nsel(n.id);return n}
 function ncommit(loud){
   const n=curN();if(!n)return;clearTimeout(ndt);
@@ -467,10 +474,10 @@ $('n').addEventListener('drop',e=>{e.preventDefault();$('n').classList.remove('d
 $('n_del').onclick=()=>{
   if(!curN()||!confirm('Deze notitie verwijderen?'))return;
   NOTES=NOTES.filter(n=>n.id!==NID);nsave();
-  NOTES.length?nsel(NOTES.slice().sort((a,b)=>b.u-a.u)[0].id):nadd();
+  NOTES.length?nsel(NOTES.slice().sort((a,b)=>b.u-a.u)[0].id):nsel(null);
 };
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'&&$('n').classList.contains('on')){e.preventDefault();ncommit(true)}});
-NOTES.length?nsel(NOTES.slice().sort((a,b)=>b.u-a.u)[0].id):nadd();
+NOTES.length?nsel(NOTES.slice().sort((a,b)=>b.u-a.u)[0].id):nsel(null);
 
 // ---- Home
 function greet(){const h=new Date().getHours();return h<6?'Goedenacht':h<12?'Goedemorgen':h<18?'Goedemiddag':'Goedenavond'}
@@ -513,7 +520,7 @@ $('c_f').onchange=async e=>{
     if(j.settings)KEYS.forEach(k=>{if(j.settings[k]!==undefined)S[k]=k==='rate'?(+j.settings[k]||0):String(j.settings[k])});
     try{localStorage.setItem('ovb_s',JSON.stringify(S))}catch(_){}
     if(Array.isArray(j.notes))j.notes.forEach(o=>{if(o&&!NOTES.some(n=>n.id===o.id))NOTES.push({id:o.id||nid(),t:String(o.t||''),b:String(o.b||''),u:+o.u||Date.now()})});
-    nsave();fillSet();runAll();nlist();toast('Backup geïmporteerd');
+    nsave();fillSet();runAll();if(!curN()&&NOTES.length)nsel(NOTES.slice().sort((a,b)=>b.u-a.u)[0].id);else nlist();toast('Backup geïmporteerd');
   }catch(_){toast('Dit is geen geldige OVB-backup')}
 };
 
