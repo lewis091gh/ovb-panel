@@ -8,7 +8,7 @@ Geen account, geen database en geen server. Alles draait in je eigen browser en 
 
 - **Home:** overzicht, snelle knoppen en een check op lege instellingen.
 - **Stortingen:** bedrag berekenen uit uren en minuten, of een hele lijst in één keer plakken.
-- **Trainingen:** soort (Bus, Taxi, Trident), datum, starttijd en duur, met een eigen verzamelpunt per soort.
+- **Trainingen:** soort (Bus of Taxi), datum, starttijd en duur, met een eigen verzamelpunt per soort.
 - **Taxi-examen, Sancties, Ranks:** invullen en kopiëren.
 - **Notepad:** berichten bewaren, importeren (`.txt`, `.md`, `.json`) en een backup maken.
 - **Instellingen:** uurloon, ID's, naam en functie. Hiermee kun je ook alles exporteren en importeren.
