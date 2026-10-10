@@ -2,15 +2,20 @@
 
 Een los hulpmiddel voor Openbaar Vervoer Benelux. Je vult een paar velden in en krijgt kant-en-klare Discord-berichten: stortingen, trainingen, taxi-examens, sancties en rank-updates. Er is ook een Notepad om berichten te bewaren.
 
-Geen account, geen database en geen server. Alles draait in je eigen browser en blijft daar staan.
+Alles draait in je browser en blijft daar staan. Wil je notities en stortingen delen tussen apparaten, dan koppel je optioneel Supabase (zie `SUPABASE.md`). Met een wachtwoord logt het gedeelde account in.
 
 ## Wat kan het?
 
 - **Home:** overzicht, snelle knoppen en een check op lege instellingen.
+- **Overzicht:** gelogde stortingen met totalen per week en maand (CSV-export) en je laatst gekopieerde berichten.
 - **Stortingen:** bedrag berekenen uit uren en minuten, of een hele lijst in één keer plakken.
-- **Trainingen:** soort (Bus of Taxi), datum, starttijd en duur, met een eigen verzamelpunt per soort.
+- **Trainingen:** soort (Bus of Taxi), datum, starttijd en duur, met een eigen verzamelpunt per soort en Discord-tijdstempels, zodat iedereen de tijd in zijn eigen tijdzone ziet.
 - **Taxi-examen, Sancties, Ranks:** invullen en kopiëren.
-- **Notepad:** berichten bewaren, importeren (`.txt`, `.md`, `.json`) en een backup maken.
+- **Notepad:** opmaakknoppen, emoji, @namen uit je contacten, labels en vastpinnen. Notities importeren (`.txt`, `.md`, `.json`) en een backup maken.
+- Berichten boven 2000 tekens worden automatisch in stukken gesplitst.
+- **Thema's:** Nacht, Licht, OVB en Bus, met een eigen accentkleur en de mogelijkheid om animaties uit te zetten.
+- **Synchronisatie:** met een wachtwoord en Supabase deel je notities, stortingen en contacten tussen apparaten en mensen.
+- Een mooie updatemelding zodra er een nieuwe versie online staat.
 - **Instellingen:** uurloon, ID's, naam en functie. Hiermee kun je ook alles exporteren en importeren.
 - Een Discord-voorbeeld bij elk bericht, meldingen bij lege velden en een uitleg per tab.
 
@@ -18,7 +23,7 @@ Geen account, geen database en geen server. Alles draait in je eigen browser en 
 
 | Toets | Actie |
 |---|---|
-| `1` – `8` | naar een tab (Home, Stortingen, Trainingen, Taxi, Sancties, Ranks, Notepad, Instellingen) |
+| `1` – `9` | naar een tab (Home, Stortingen, Trainingen, Taxi, Sancties, Ranks, Overzicht, Notepad, Instellingen) |
 | `Ctrl` + `Enter` | het bericht kopiëren |
 | `Ctrl` + `S` | notitie opslaan |
 
@@ -32,7 +37,7 @@ Geen account, geen database en geen server. Alles draait in je eigen browser en 
 
 1. Maak een account op [github.com](https://github.com) en klik rechtsboven op **+ → New repository**.
 2. Geef de repository een naam, bijvoorbeeld `ovb-panel`, kies **Public** en klik op **Create repository**.
-3. Klik op **uploading an existing file**, sleep alle bestanden uit de map erin (`index.html`, de afbeeldingen, `manifest.webmanifest`, `sw.js`, `LICENSE` en dit bestand) en klik op **Commit changes**.
+3. Klik op **uploading an existing file**, sleep alle bestanden uit de map erin (`index.html`, de afbeeldingen, `manifest.webmanifest`, `sw.js`, `version.json`, `LICENSE` en de map `.github`) en klik op **Commit changes**.
 4. Ga naar **Settings → Pages**. Kies bij **Branch** de optie `main` en de map `/ (root)` en klik op **Save**.
 5. Na een minuut staat je panel op `https://JOUWNAAM.github.io/ovb-panel/`.
 
@@ -46,9 +51,17 @@ Open de link in Chrome of Edge en kies **Installeren** in de adresbalk of via he
 
 Notities en instellingen horen bij je browser op dit apparaat. Maak daarom af en toe een backup met **Instellingen → Alles exporteren**. Op een andere computer zet je alles terug met **Alles importeren**.
 
+## Supabase (optioneel)
+
+Zie `SUPABASE.md` voor het aanmaken van de tabel en het inlogaccount. Zonder Supabase werkt het wachtwoordscherm niet. Wil je het zonder inlog gebruiken, verwijder dan de Supabase-code en het scherm `#lock`.
+
 ## Privacy
 
-Er wordt niets verstuurd of verzameld. De standaard rol-ID's staan in `index.html` bij `DEF`. Je eigen Discord-ID, naam en functie staan standaard leeg en vul je zelf in.
+Berichten, instellingen en thema blijven in je browser. Alleen notities, gelogde stortingen en contacten gaan naar jouw eigen Supabase-project, achter het wachtwoord. De standaard rol-ID's staan in `index.html` bij `DEF`. Je eigen Discord-ID, naam en functie staan standaard leeg en vul je zelf in.
+
+## Meewerken
+
+Zie `CONTRIBUTING.md`. Fouten melden en ideeën indienen kan via de formulieren bij **Issues**.
 
 ## Licentie
 
