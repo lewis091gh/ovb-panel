@@ -157,12 +157,22 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 .themes button i{width:100%;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--a),var(--b))}.themes button:hover{transform:translateY(-3px)}.themes button.on{border-color:var(--am);box-shadow:0 0 0 2px rgba(255,194,51,.3)}
 .sw{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.sw button{width:30px;height:30px;border-radius:50%;border:2px solid var(--bd);background:var(--c);color:var(--tx);cursor:pointer;font-size:14px;transition:.2s}.sw button:hover{transform:scale(1.2)}.sw button.on{border-color:var(--tx);box-shadow:0 0 0 3px var(--ring)}.sw input{width:34px;height:30px;padding:0;border-radius:8px;cursor:pointer}
 .ver{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:12px;border-top:1px solid var(--bd);color:var(--mut);font-size:13px}.ver b{color:var(--tx)}
-#upd{position:fixed;right:20px;bottom:20px;z-index:95;width:min(400px,calc(100vw - 32px));border-radius:20px;padding:20px;border:1.5px solid transparent;background:linear-gradient(var(--c1),var(--c1)) padding-box,conic-gradient(from var(--a),var(--am),var(--vi),var(--cy),var(--am)) border-box;box-shadow:0 30px 70px var(--sh);animation:rot 6s linear infinite;transform:translateY(40px) scale(.96);opacity:0;visibility:hidden;transition:transform .5s cubic-bezier(.2,.9,.3,1.2),opacity .4s,visibility .4s}
-#upd.on{transform:none;opacity:1;visibility:visible}@keyframes rot{to{--a:360deg}}
-.uh{display:flex;gap:14px;align-items:center}.ur{font-size:34px;animation:bob 2s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-6px) rotate(-6deg)}}
-.ut{font-weight:800;font-size:17px;letter-spacing:-.3px}.uv{display:inline-flex;gap:6px;align-items:center;margin-top:4px;font-size:12px;color:var(--mut)}.uv b{padding:2px 9px;border-radius:99px;background:rgba(255,194,51,.15);color:var(--at)}
-.ul{list-style:none;margin:14px 0 4px;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px}.ul li{display:flex;gap:10px;align-items:flex-start;animation:up .45s both}.ul li:nth-child(2){animation-delay:.05s}.ul li:nth-child(3){animation-delay:.1s}.ul li:nth-child(4){animation-delay:.15s}.ul li:nth-child(5){animation-delay:.2s}.ul li:nth-child(n+6){animation-delay:.25s}
-.ub{display:flex;gap:8px;margin-top:14px}.ub .btn{margin:0;padding:11px}
+#upd{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(6,3,16,.62);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}#upd.on{opacity:1;visibility:visible}
+.um{position:relative;width:min(460px,100%);max-height:calc(100vh - 40px);overflow:auto;border-radius:24px;padding:28px 26px 22px;text-align:center;border:1.5px solid transparent;background:linear-gradient(var(--c1),var(--c1)) padding-box,conic-gradient(from var(--a),var(--am),var(--vi),var(--cy),var(--am)) border-box;box-shadow:0 40px 90px rgba(0,0,0,.55);animation:rot 6s linear infinite;transform:translateY(30px) scale(.92);transition:transform .55s cubic-bezier(.2,.9,.3,1.25)}
+#upd.on .um{transform:none}@keyframes rot{to{--a:360deg}}
+.ur{display:inline-block;font-size:58px;line-height:1;filter:drop-shadow(0 8px 20px rgba(255,150,40,.5))}.ur.go{animation:launch 1.8s ease-in-out infinite}@keyframes launch{0%,100%{transform:translateY(5px) rotate(-8deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+.ut{margin-top:10px;font-size:23px;font-weight:800;letter-spacing:-.4px;background:linear-gradient(90deg,var(--tx),var(--am));-webkit-background-clip:text;background-clip:text;color:transparent}
+.uv{display:inline-flex;gap:8px;align-items:center;margin-top:10px;font-size:13px}.uv b{padding:3px 11px;border-radius:99px;background:rgba(255,194,51,.16);color:var(--at)}.uv i{font-style:normal;color:var(--mut)}.us{margin-top:8px;color:var(--mut);font-size:14px}
+.ul{list-style:none;margin:18px 0 6px;padding:0;display:flex;flex-direction:column;gap:8px;text-align:left}.ul li{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--in);border:1px solid var(--bd);font-size:14px;animation:up .5s both}.ul li span:first-child{font-size:20px}
+.ul li:nth-child(2){animation-delay:.06s}.ul li:nth-child(3){animation-delay:.12s}.ul li:nth-child(4){animation-delay:.18s}.ul li:nth-child(5){animation-delay:.24s}.ul li:nth-child(6){animation-delay:.3s}.ul li:nth-child(7){animation-delay:.36s}.ul li:nth-child(n+8){animation-delay:.42s}
+.ub{display:flex;gap:10px;margin-top:18px}.ub .btn{margin:0}
+.spk{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none}.spk i{position:absolute;width:6px;height:6px;border-radius:50%;opacity:0;animation:spk 3.2s ease-in-out infinite}@keyframes spk{0%{transform:translateY(20px) scale(.4);opacity:0}30%{opacity:.9}100%{transform:translateY(-90px) scale(1);opacity:0}}
+.chart svg{width:100%;height:auto;display:block;margin-top:10px}.bar{fill:var(--am);transform-box:fill-box;transform-origin:bottom;animation:grow .7s cubic-bezier(.2,.9,.3,1.2) both}@keyframes grow{from{transform:scaleY(0)}}.bl{fill:var(--mut);font-size:9px}.bv{fill:var(--tx);font-size:9px;font-weight:700}
+.er{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--in);border:1px solid var(--bd);border-left:4px solid #34d399;cursor:pointer;transition:.2s}.er:hover{transform:translateX(3px);border-color:var(--am)}.er.o{border-left-color:#fbbf24}.er.r{border-left-color:#ff6b8b}.er.on{background:rgba(255,194,51,.08)}.er.off{opacity:.55}
+.er b{display:block;font-size:14px}.er small{color:var(--mut);font-size:12px}.eb{display:flex;gap:4px;flex:none}.eb .b{padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;background:rgba(255,255,255,.07);color:var(--mut)}.er.o .eb .b,.er.r .eb .b{color:var(--tx)}.er.r .eb .b{background:rgba(255,107,139,.2)}
+#p_b{min-height:200px;resize:vertical;font:14px/1.55 ui-monospace,'Cascadia Code',Consolas,monospace}
+.tg{font-style:normal;margin-left:6px;padding:1px 8px;border-radius:99px;background:rgba(52,211,153,.15);color:#34d399;font-size:10px;text-transform:none;letter-spacing:0}.tg.me{background:rgba(255,194,51,.15);color:var(--at)}
+@media(min-width:861px) and (min-height:640px){#e_l{max-height:calc(100vh - 520px);min-height:110px}#p_b{height:calc(100vh - 440px)}.ll{max-height:calc(100vh - 560px);min-height:80px}}
 </style></head><body data-vm="p">
 <div id="lock"><div class="card" style="width:100%;max-width:380px;text-align:center"><div class="blogo" style="margin:0 auto 20px;width:150px;height:44px;cursor:default"></div>
 <form id="lf"><label style="text-align:left">Wachtwoord</label><input id="lp" type="password" required autocomplete="current-password" autofocus><div id="le"></div><button class="btn" id="lb" type="submit" style="margin:0">Inloggen</button></form></div></div>
@@ -173,12 +183,12 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 <div class="wrap">
 <header class="top"><div class="blogo"></div>
 <nav class="dock" id="nav"><span class="ind"></span><button data-t="h"><span class="ic">🏠</span> Home</button>
-<button data-t="s"><span class="ic">💰</span> Stortingen</button><button data-t="t"><span class="ic">🚌</span> Trainingen</button><button data-t="x"><span class="ic">🚕</span> Taxi-examen</button><button data-t="k"><span class="ic">⚠️</span> Sancties</button><button data-t="r"><span class="ic">✨</span> Ranks</button><button data-t="o"><span class="ic">📊</span> Overzicht</button><button data-t="n"><span class="ic">📝</span> Notepad</button><button data-t="c"><span class="ic">⚙️</span> Instellingen</button></nav><div class="tools"><button class="sy" id="sy" title="Nu synchroniseren">☁</button><button class="ico" id="out" title="Uitloggen">⎋</button></div></header>
+<button data-t="s"><span class="ic">💰</span> Stortingen</button><button data-t="t"><span class="ic">🚌</span> Trainingen</button><button data-t="x"><span class="ic">🚕</span> Taxi-examen</button><button data-t="k"><span class="ic">⚠️</span> Sancties</button><button data-t="r"><span class="ic">✨</span> Ranks</button><button data-t="p"><span class="ic">🧩</span> Sjablonen</button><button data-t="m"><span class="ic">👥</span> Medewerkers</button><button data-t="o"><span class="ic">📊</span> Overzicht</button><button data-t="n"><span class="ic">📝</span> Notepad</button><button data-t="c"><span class="ic">⚙️</span> Instellingen</button></nav><div class="tools"><button class="sy" id="sy" title="Nu synchroniseren">☁</button><button class="ico" id="out" title="Uitloggen">⎋</button></div></header>
 <main>
 <section class="panel" id="h">
 <div class="card"><div class="hero"><div><div class="hg" id="h_g"></div><div class="hn" id="h_n"></div></div><div class="hc"><b id="h_c"></b><small id="h_d"></small></div></div>
-<div class="tiles"><button class="tile" data-go="s"><span>💰</span>Storting</button><button class="tile" data-go="t"><span>🚌</span>Training</button><button class="tile" data-go="x"><span>🚕</span>Taxi-examen</button><button class="tile" data-go="k"><span>⚠️</span>Sanctie</button><button class="tile" data-go="r"><span>✨</span>Ranks</button><button class="tile" data-go="o"><span>📊</span>Overzicht</button><button class="tile" data-go="n"><span>📝</span>Notepad</button></div></div>
-<div class="card"><div id="h_st"></div><div class="keys"><span><kbd>1</kbd> – <kbd>9</kbd> naar een tab</span><span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> bericht kopiëren</span><span><kbd>Ctrl</kbd> + <kbd>S</kbd> notitie opslaan</span></div>
+<div class="tiles"><button class="tile" data-go="s"><span>💰</span>Storting</button><button class="tile" data-go="t"><span>🚌</span>Training</button><button class="tile" data-go="x"><span>🚕</span>Taxi-examen</button><button class="tile" data-go="k"><span>⚠️</span>Sanctie</button><button class="tile" data-go="r"><span>✨</span>Ranks</button><button class="tile" data-go="p"><span>🧩</span>Sjablonen</button><button class="tile" data-go="m"><span>👥</span>Medewerkers</button><button class="tile" data-go="o"><span>📊</span>Overzicht</button><button class="tile" data-go="n"><span>📝</span>Notepad</button></div></div>
+<div class="card"><div id="h_st"></div><div class="keys"><span><kbd>1</kbd> – <kbd>0</kbd> naar een tab</span><span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> bericht kopiëren</span><span><kbd>Ctrl</kbd> + <kbd>S</kbd> notitie opslaan</span></div>
 <button class="btn alt hide" id="h_inst">⬇ Installeer als app</button></div>
 </section>
 
@@ -202,13 +212,13 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 <section class="panel" id="x">
 <div class="card"><label>Resultaat</label>
 <div class="seg" id="x_seg"><button data-v="g" class="on">✅ Geslaagd</button><button data-v="z">❌ Gezakt</button></div>
-<div id="x_cd" class="hide"><label>Cooldown (dagen)</label><input id="x_c" type="number" min="1" value="3"></div><button class="btn ghost" data-clear="x">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Kies geslaagd of gezakt. Bij gezakt vul je het aantal dagen cooldown in.</p></details></div>
+<div id="x_cd" class="hide"><label>Cooldown (dagen)</label><input id="x_c" type="number" min="1" value="3"><label class="chk"><input type="checkbox" id="x_rd" checked> Datum van opnieuw proberen in het bericht</label><label>Datum van het examen</label><input id="x_d" type="date"></div><button class="btn ghost" data-clear="x">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Kies geslaagd of gezakt. Bij gezakt vul je het aantal dagen cooldown in.</p></details></div>
 <div class="card"><div class="out" id="x_o"></div></div></section>
 
 <section class="panel" id="k">
 <div class="card"><label>Type</label>
 <select id="k_t"><option value="a">Aanspreking – lichte fout</option><option value="s">Strike – mag niet nog eens gebeuren</option><option value="x">Schorsing – riskant om in dienst te laten</option></select>
-<label>Naam</label><input id="k_n" placeholder="Naam medewerker"><label>Reden</label><textarea id="k_r" rows="4" placeholder="Laat leeg om (Invullen) te behouden"></textarea><button class="btn ghost" data-clear="k">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Kies de soort sanctie en vul de naam en reden in. Laat je de reden leeg, dan blijft (Invullen) staan zodat de medewerker het zelf kan toelichten.</p></details></div>
+<label>Naam</label><input id="k_n" list="k_nl" placeholder="Naam medewerker"><datalist id="k_nl"></datalist><label>Reden</label><textarea id="k_r" rows="4" placeholder="Laat leeg om (Invullen) te behouden"></textarea><button class="btn ghost" data-clear="k">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Kies de soort sanctie en vul de naam en reden in. Laat je de reden leeg, dan blijft (Invullen) staan zodat de medewerker het zelf kan toelichten.</p></details></div>
 <div class="card"><div class="out" id="k_o"></div></div></section>
 
 <section class="panel" id="r">
@@ -218,8 +228,28 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 <label>Rank-down (per regel een naam)</label><textarea id="r_d" rows="3"></textarea><button class="btn ghost" data-clear="r">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Zet per regel een naam. Bij Rank-Up zet je de nieuwe rank erachter: naam | rank. Categorieën die je leeg laat komen niet in het bericht.</p></details></div>
 <div class="card"><div class="out" id="r_o"></div></div></section>
 
+<section class="panel" id="p">
+<div class="card"><div class="row" style="align-items:stretch"><select id="p_sel" style="flex:2"></select><button class="btn ghost" id="p_new" style="margin:0;padding:8px 14px">＋ Nieuw</button></div>
+<label>Naam van het sjabloon</label><input id="p_n" placeholder="Bijvoorbeeld Welkom">
+<label>Bericht (zet {velden} tussen accolades)</label><textarea id="p_b" rows="9" placeholder="> **Welkom {naam}!**&#10;> Je start als {rol}."></textarea>
+<div class="nt"><button class="btn" id="p_save">Opslaan</button><button class="btn ghost" id="p_ex">Voorbeelden</button><button class="btn ghost danger" id="p_del">Verwijderen</button></div>
+<details class="help"><summary>ⓘ Uitleg</summary><p>Schrijf je bericht en zet tussen accolades wat je later wilt invullen, bijvoorbeeld {naam} of {reden}. Rechts verschijnt voor elk veld een invulvak. Vaste velden vult het panel zelf in: {datum}, {tijd}, {ik} (jouw mention), {mijnnaam}, {functie} en {bedrijf}. Sjablonen worden gedeeld met iedereen die inlogt.</p></details></div>
+<div class="card"><div id="p_f"></div><div class="out" id="p_o" style="margin-top:14px"></div></div>
+</section>
+
+<section class="panel" id="m">
+<div class="card"><div class="sums"><div>Medewerkers<b id="e_cn">0</b></div><div>Sancties<b id="e_cs">0</b></div><div>Let op<b id="e_cw">0</b></div></div>
+<div class="row" style="margin-top:14px"><input id="e_n" placeholder="Naam"><input id="e_f" list="e_fl" placeholder="Functie"></div><datalist id="e_fl"></datalist>
+<div class="row" style="margin-top:8px"><input id="e_i" placeholder="Discord-ID (optioneel)" inputmode="numeric"><button class="btn" id="e_add" style="margin:0;padding:10px">＋ Toevoegen</button></div>
+<div class="row" style="margin-top:12px"><input id="e_q" placeholder="Zoeken…" style="flex:1.2"><select id="e_ff"></select><select id="e_so"><option value="n">Op naam</option><option value="s">Meeste sancties</option><option value="f">Op functie</option></select></div>
+<div class="nl" id="e_l"></div>
+<details class="help"><summary>ⓘ Uitleg</summary><p>Voeg medewerkers toe met hun functie. Elke sanctie die je bij Sancties met Log vastlegt, telt mee voor die persoon: A is een aanspreking, S een strike en Z een schorsing. Rood betekent twee strikes, een schorsing of drie sancties, oranje dat er minstens één is. Met Verwerk bij Ranks werk je functies automatisch bij.</p></details></div>
+<div class="card" id="e_d"></div>
+</section>
+
 <section class="panel" id="o">
 <div class="card"><div class="sums"><div>Deze week<b id="o_w">€ 0</b></div><div>Deze maand<b id="o_m">€ 0</b></div><div>Totaal<b id="o_a">€ 0</b></div></div>
+<div class="seg" id="o_seg" style="margin-top:14px"><button data-v="w" class="on">Per week</button><button data-v="m">Per maand</button></div><div class="chart" id="o_ch"></div>
 <label>Stortingen</label><div class="ll" id="o_l"></div>
 <div class="nt"><button class="btn ghost" id="o_csv">⬇ CSV</button><button class="btn ghost danger" id="o_clr">Alles wissen</button></div>
 <details class="help"><summary>ⓘ Uitleg</summary><p>Stortingen die je bij Stortingen met Log vastlegt, komen hier met totalen per week en maand. Je kunt ze exporteren naar CSV. Rechts staan je laatst gekopieerde berichten, zodat je ze opnieuw kunt gebruiken.</p></details></div>
@@ -241,10 +271,11 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 </section>
 
 <section class="panel" id="c">
-<div class="card"><div class="sg"><div><label>Verdienste per uur (€)</label><input id="c_rate" type="number" min="0"></div><div><label>Bedrijfsnaam (stortingen)</label><input id="c_bedrijf"></div><div><label>Jouw Discord-ID</label><input id="c_me" placeholder="Vul hier je eigen Discord-ID in"></div><div><label>Jouw naam (handtekening)</label><input id="c_naam" placeholder="Vul hier je eigen naam in"></div><div><label>Functie</label><input id="c_titel" placeholder="Vul hier je functie in"></div><div><label>Rol-ID storting</label><input id="c_rolS"></div><div><label>Rol-ID ranks</label><input id="c_rolR"></div><div><label>Verzamelpunt Bus-training</label><input id="c_punt"></div><div><label>Verzamelpunt Taxi-training</label><input id="c_puntTaxi"></div></div><button class="btn alt" id="c_reset">Standaardwaarden herstellen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Alles wat je hier invult blijft in je browser. Zonder je Discord-ID, naam en functie kun je niet alle berichten maken. Thema, accentkleur en animaties gelden alleen voor dit apparaat.</p></details></div>
+<div class="card"><div class="sg"><div><label>Verdienste per uur (€)<i class="tg">gedeeld</i></label><input id="c_rate" type="number" min="0"></div><div><label>Bedrijfsnaam (stortingen)<i class="tg">gedeeld</i></label><input id="c_bedrijf"></div><div><label>Jouw Discord-ID<i class="tg me">alleen jij</i></label><input id="c_me" placeholder="Vul hier je eigen Discord-ID in"></div><div><label>Jouw naam (handtekening)<i class="tg me">alleen jij</i></label><input id="c_naam" placeholder="Vul hier je eigen naam in"></div><div><label>Functie<i class="tg me">alleen jij</i></label><input id="c_titel" placeholder="Vul hier je functie in"></div><div><label>Rol-ID storting<i class="tg">gedeeld</i></label><input id="c_rolS"></div><div><label>Rol-ID ranks<i class="tg">gedeeld</i></label><input id="c_rolR"></div><div><label>Verzamelpunt Bus-training<i class="tg">gedeeld</i></label><input id="c_punt"></div><div><label>Verzamelpunt Taxi-training<i class="tg">gedeeld</i></label><input id="c_puntTaxi"></div></div><button class="btn alt" id="c_reset">Standaardwaarden herstellen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Gedeelde instellingen gelden voor iedereen die inlogt. Je Discord-ID, naam en functie blijven alleen op dit apparaat. Zonder je Discord-ID, naam en functie kun je niet alle berichten maken. Thema, accentkleur en animaties gelden alleen voor dit apparaat.</p></details></div>
 <div class="card"><label style="margin-top:0">Thema</label><div class="themes" id="c_th"><button data-th="nacht"><i style="--a:#8b5cf6;--b:#090612"></i>Nacht</button><button data-th="licht"><i style="--a:#ffffff;--b:#c9bff5"></i>Licht</button><button data-th="ovb"><i style="--a:#3b82f6;--b:#06101f"></i>OVB</button><button data-th="bus"><i style="--a:#ffcc00;--b:#24272c"></i>Bus</button></div>
 <label>Accentkleur</label><div class="sw" id="c_ac"><button data-ac="" style="--c:transparent" title="Standaard van het thema">⟲</button><button data-ac="#ffc233,#ff8a3d" style="--c:#ffc233" title="Amber"></button><button data-ac="#ff6bb5,#ff3c7a" style="--c:#ff6bb5" title="Roze"></button><button data-ac="#2bd2ff,#2b8cff" style="--c:#2bd2ff" title="Cyaan"></button><button data-ac="#34d399,#10b981" style="--c:#34d399" title="Groen"></button><button data-ac="#a78bfa,#8b5cf6" style="--c:#a78bfa" title="Paars"></button><input type="color" id="c_acc" title="Eigen kleur" value="#ffc233"></div>
 <label class="chk"><input type="checkbox" id="c_an" checked> Animaties aan</label>
+<label>Automatisch uitloggen</label><select id="c_idle"><option value="0">Nooit</option><option value="5">Na 5 minuten niets doen</option><option value="15">Na 15 minuten</option><option value="30">Na 30 minuten</option><option value="60">Na 1 uur</option><option value="120">Na 2 uur</option></select>
 <label>Backup</label><div class="nt"><button class="btn ghost" id="c_exp">⬇ Alles exporteren</button><button class="btn ghost" id="c_imp">⬆ Alles importeren</button></div><input type="file" id="c_f" class="hide" accept=".json,application/json">
 <div class="ver"><span>Versie <b id="c_v"></b></span><button class="btn ghost" id="c_new" style="width:auto;margin:0;padding:8px 14px">Wat is nieuw</button></div></div>
 </section>
@@ -316,9 +347,9 @@ function splitMsg(t){
 }
 function show(el,arr){
   const c=$(el),parts=[];
-  arr.forEach(x=>{const ps=splitMsg(x.txt);ps.forEach((p,i)=>parts.push({...x,txt:p,lg:i?undefined:x.lg,label:(x.label||'')+(ps.length>1?' · deel '+(i+1)+'/'+ps.length:'')}))});
+  arr.forEach(x=>{const ps=splitMsg(x.txt);ps.forEach((p,i)=>parts.push({...x,txt:p,lg:i?undefined:x.lg,sl:i?undefined:x.sl,rk:i?undefined:x.rk,label:(x.label||'')+(ps.length>1?' · deel '+(i+1)+'/'+ps.length:'')}))});
   c._a=parts;
-  c.innerHTML=parts.length?parts.map((x,i)=>`<div class="msg"><div class="mh"><div class="vt"><button data-v="p">Voorbeeld</button><button data-v="t">Tekst</button></div><span class="ml">${esc(x.label||'')}</span><span class="cnt ${x.txt.length>2000?'bad':''}">${x.txt.length}/2000</span><button class="cp" data-s="${i}">Bewaar</button>${x.lg?`<button class="cp" data-l="${i}">Log</button>`:''}<button class="cp" data-c="${i}">Kopieer</button></div><div class="pv">${md(x.txt)}</div><pre>${esc(x.txt)}</pre></div>`).join('')+(parts.length>1?'<button class="btn alt" data-c="all">Kopieer alles</button>':''):'<div class="empty">Nog niets om te tonen.</div>';
+  c.innerHTML=parts.length?parts.map((x,i)=>`<div class="msg"><div class="mh"><div class="vt"><button data-v="p">Voorbeeld</button><button data-v="t">Tekst</button></div><span class="ml">${esc(x.label||'')}</span><span class="cnt ${x.txt.length>2000?'bad':''}">${x.txt.length}/2000</span><button class="cp" data-s="${i}">Bewaar</button>${x.lg?`<button class="cp" data-l="${i}">Log</button>`:''}${x.sl?`<button class="cp" data-sl="${i}">Log</button>`:''}${x.rk&&x.rk.length?`<button class="cp" data-rk="${i}">Verwerk</button>`:''}<button class="cp" data-c="${i}">Kopieer</button></div><div class="pv">${md(x.txt)}</div><pre>${esc(x.txt)}</pre></div>`).join('')+(parts.length>1?'<button class="btn alt" data-c="all">Kopieer alles</button>':''):'<div class="empty">Nog niets om te tonen.</div>';
 }
 async function copy(txt){try{await navigator.clipboard.writeText(txt)}catch(e){const a=document.createElement('textarea');a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(_){}a.remove()}}
 function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
@@ -385,10 +416,11 @@ function training(){
 let xv='g';
 seg('x_seg',v=>{xv=v;$('x_cd').classList.toggle('hide',v==='g');taxi()});
 function taxi(){
-  if(check('x','x_o',[['x_c',xv==='z'&&!(+$('x_c').value>0),'Vul de cooldown in (aantal dagen).']]))return;
+  if(check('x','x_o',[['x_c',xv==='z'&&!(+$('x_c').value>0),'Vul de cooldown in (aantal dagen).'],['x_d',xv==='z'&&$('x_rd').checked&&!$('x_d').value,'Kies de datum van het examen.']]))return;
   const n=+$('x_c').value||3,t=n+(n===1?' dag':' dagen');
+  let rd=0;if(xv==='z'&&$('x_rd').checked&&$('x_d').value){const [yy,mm,dd]=$('x_d').value.split('-').map(Number);rd=Math.floor(new Date(yy,mm-1,dd+n,12,0).getTime()/1000)}
   show('x_o',[{txt:xv==='g'?q(['*🚕 **Taxi Bevoegdheidsexamen | Resultaat***','','*Gefeliciteerd! Je bent **geslaagd** voor het Taxi Bevoegdheidsexamen. 🥳*','*Dat betekent dat jij vanaf nu **in dienst mag bij de taxidienst**.*','*Heb je verder geen vragen meer? Dan mag je direct beginnen als taxichauffeur. Wij wensen je alvast veel succes en veilige kilometers! 🚖*'])
-   :q(['*🚕 **Taxi Bevoegdheidsexamen | Resultaat***','','*Helaas ben je deze keer **gezakt** voor het Taxi Bevoegdheidsexamen.*',`*Geen zorgen, je krijgt over **${t} opnieuw de mogelijkheid** om het examen af te leggen. Gebruik deze tijd om de verkeerssituaties en regels nog eens goed door te nemen.*`,`__**Cooldown:** = ${t}__`,'','*Succes bij je volgende poging!*'])}]);
+   :q(['*🚕 **Taxi Bevoegdheidsexamen | Resultaat***','','*Helaas ben je deze keer **gezakt** voor het Taxi Bevoegdheidsexamen.*',`*Geen zorgen, je krijgt over **${t} opnieuw de mogelijkheid** om het examen af te leggen. Gebruik deze tijd om de verkeerssituaties en regels nog eens goed door te nemen.*`,`__**Cooldown:** = ${t}__`,...(rd?['',`*Opnieuw proberen kan vanaf <t:${rd}:D> (<t:${rd}:R>).*`]:[]),'','*Succes bij je volgende poging!*'])}]);
 }
 
 // ---- Sancties
@@ -401,7 +433,8 @@ function sanctie(){
   if(t==='a')b=[`*Geachte ${n},*`,'','*Hierbij informeren wij u dat er een formele aanspreking is plaatsgevonden met betrekking tot uw handelingen. Deze vastlegging heeft op dit moment geen directe gevolgen, maar wordt administratief geregistreerd.*','','*Er is een afwijking geconstateerd ten opzichte van de werkwijze. Wij verzoeken u vriendelijk om hieronder kort en feitelijk toe te lichten wat er is voorgevallen.*','',`*Reden aanspreking: ${r}*`,'','*Wij verwachten dat u deze melding serieus neemt en uw handelen waar nodig afstemt op de geldende richtlijnen en procedures.*',''];
   else if(t==='s')b=[`*Geachte ${n},*`,'','*Hierbij mededelen wij dat er een officiële strike aan u is toegekend naar aanleiding van uw handelingen. Deze waarschuwing wordt geregistreerd binnen de organisatie en kan gevolgen hebben bij eventuele herhaling of verdere overtredingen.*','','*Er is vastgesteld dat uw handelingen afweken van de geldende richtlijnen en procedures. Wij verzoeken u om hieronder kort en feitelijk toe te lichten wat er heeft plaatsgevonden.*','',`*Reden van de waarschuwing: ${r}*`,'','*Wij verwachten dat u deze waarschuwing serieus neemt en uw werkwijze per direct aanpast conform de geldende regels en afspraken.*',''];
   else b=[`*Geachte ${n},*`,'','*Hierbij mededelen wij dat er een officiële schorsing aan u is toegekend naar aanleiding van uw handelingen. Deze schorsing wordt geregistreerd binnen de organisatie en kan gevolgen hebben bij herhaling.*','','*Er is vastgesteld dat uw handelingen afweken van de geldende richtlijnen en procedures. Wij hebben hierbij besloten om u te schorsen van ons bedrijf tot verder bericht.*','',`*Reden van de schorsing: ${r}*`,'','*Wij verwachten dat u deze sanctie serieus neemt & navolgt. Hierbij hoort dat u geen shift draait en trident gebruikt en dus **niet** een bus bestuurt tot verder bericht.*',''];
-  show('k_o',[{txt:q(b.concat(sig))}]);
+  const nm={a:'Aanspreking',s:'Strike',x:'Schorsing'}[t];
+  show('k_o',[{txt:q(b.concat(sig)),sl:{naam:$('k_n').value.trim(),type:nm,reden:$('k_r').value.trim()}}]);
 }
 
 // ---- Ranks
@@ -416,7 +449,7 @@ function rank(){
   if(hd.length)p.push('**`Rankhoudend..`** 💤\n'+q(hd));
   if(dn.length)p.push('**`Rank-down..`** 🍃\n'+q(dn));
   p.push('- *Heb je dit keer geen rankup? Geen zorgen, je haalt het de volgende keer vast!* 👍','|| <@&'+S.rolR+'>.  ||');
-  show('r_o',[{txt:p.join('\n\n')}]);
+  show('r_o',[{txt:p.join('\n\n'),rk:L('r_u').map(l=>{const [n,r]=l.split('|').map(x=>x.trim());return{naam:n,rank:r||''}}).filter(x=>x.naam&&x.rank)}]);
 }
 
 // ---- Instellingen (alleen in je eigen browser)
@@ -490,15 +523,15 @@ addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{
 
 addEventListener('load',relayout);addEventListener('resize',relayout);if(window.ResizeObserver)new ResizeObserver(relayout).observe($('nav'));
 document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--cx',e.clientX-r.left+'px');c.style.setProperty('--cy',e.clientY-r.top+'px')}});
-$('t_d').value=new Date().toLocaleDateString('sv-SE');
+$('t_d').value=$('x_d').value=new Date().toLocaleDateString('sv-SE');
 // ================= Gegevens (lokaal + synchronisatie) =================
-const VERSION='2.0.0';
-const CHANGES=[['⏱️','Discord-tijdstempels bij trainingen'],['✂️','Lange berichten worden automatisch gesplitst'],['🕘','Berichtgeschiedenis in Overzicht'],['💰','Stortingen loggen met totalen en CSV-export'],['📝','Notepad met opmaak, emoji, @namen, labels en vastpinnen'],['🎨','Thema’s, accentkleur en animaties uitzetten'],['☁️','Wachtwoord en synchronisatie tussen apparaten']];
-const NN={s:'Storting',t:'Training',x:'Taxi-examen',k:'Sanctie',r:'Ranks'};
-const SKEY={notes:'ovb_notes',stort:'ovb_stort',contacts:'ovb_contacts'};
-let NOTES=[],STORT=[],CONT=[],NID=null,ndt=0;
-const SMAP={notes:()=>NOTES,stort:()=>STORT,contacts:()=>CONT};
-const SSET={notes:a=>{NOTES=a},stort:a=>{STORT=a},contacts:a=>{CONT=a}};
+const VERSION='2.1.0';
+const CHANGES=[['👥','Medewerkers met functie en sancties per persoon'],['🧩','Eigen sjablonen met invulvelden'],['⚡','Direct bijwerken tussen apparaten'],['🔒','Automatisch uitloggen bij inactiviteit'],['⚙️','Gedeelde instellingen voor iedereen'],['📊','Grafiek van stortingen per week en maand'],['📅','Herexamendatum bij een gezakt taxi-examen'],['🚀','Nieuwe pop-up bij updates']];
+const NN={s:'Storting',t:'Training',x:'Taxi-examen',k:'Sanctie',r:'Ranks',p:'Sjabloon'};
+const SKEY={notes:'ovb_notes',stort:'ovb_stort',contacts:'ovb_contacts',settings:'ovb_settings',staff:'ovb_staff',sanc:'ovb_sanc',templates:'ovb_tpl'};
+let NOTES=[],STORT=[],CONT=[],SET=[],STAFF=[],SANC=[],TPL=[],NID=null,ndt=0;
+const SMAP={notes:()=>NOTES,stort:()=>STORT,contacts:()=>CONT,settings:()=>SET,staff:()=>STAFF,sanc:()=>SANC,templates:()=>TPL};
+const SSET={notes:a=>{NOTES=a},stort:a=>{STORT=a},contacts:a=>{CONT=a},settings:a=>{SET=a},staff:a=>{STAFF=a},sanc:a=>{SANC=a},templates:a=>{TPL=a}};
 for(const k in SKEY){try{const a=JSON.parse(localStorage.getItem(SKEY[k])||'[]');if(Array.isArray(a))SSET[k](a)}catch(e){}}
 const live=a=>a.filter(o=>!o.x);
 const nid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -522,7 +555,7 @@ async function syncAll(){
   try{
     const {data,error}=await sb.from('store').select('id,kind,d,u');
     if(error)throw error;
-    const rem={notes:new Map(),stort:new Map(),contacts:new Map()},up=[];
+    const rem={},up=[];Object.keys(SKEY).forEach(k=>{rem[k]=new Map()});
     data.forEach(r=>{if(rem[r.kind])rem[r.kind].set(r.id,r.d)});
     for(const k in rem){
       const loc=new Map(SMAP[k]().map(o=>[o.id,o]));
@@ -531,13 +564,15 @@ async function syncAll(){
       SSET[k]([...loc.values()]);saveK(k);
     }
     if(up.length){const {error:e2}=await sb.from('store').upsert(up);if(e2)throw e2}
+    applyShared();
+    if(!live(SET).length){const o={id:'shared',u:0};SHK.forEach(k=>{o[k]=S[k]});SET.push(o);touch('settings',o)}
     setSy('ok');refreshAll();
   }catch(e){setSy('err',e.message||String(e));if(!SYN.warned){SYN.warned=true;toast('Synchroniseren mislukt: '+(e.message||'geen verbinding'))}}
   finally{SYN.busy=false}
 }
 function startSync(){
-  if(!sb||SYN.on)return;SYN.on=true;syncAll();
-  setInterval(()=>{if(!document.hidden)syncAll()},40000);
+  if(!sb||SYN.on)return;SYN.on=true;syncAll();startRealtime();
+  setInterval(()=>{if(!document.hidden)syncAll()},120000);
   addEventListener('focus',syncAll);addEventListener('online',syncAll);
 }
 $('sy').onclick=()=>{if(SYN.on)syncAll();else toast('Log eerst in om te synchroniseren')};
@@ -566,12 +601,16 @@ function enter(){
 // ---- Updatemelding
 const cmpV=(a,b)=>{const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);for(let i=0;i<3;i++){if((x[i]||0)!==(y[i]||0))return(x[i]||0)-(y[i]||0)}return 0};
 function banner(o){
-  const b=$('upd');
-  b.innerHTML=`<div class="uh"><div class="ur">${o.icon}</div><div><div class="ut">${esc(o.title)}</div><div class="uv">${o.from?`<b>v${esc(o.from)}</b> →`:''}<b>v${esc(o.to)}</b></div></div></div><ul class="ul">${o.items.map(i=>`<li><span>${i[0]}</span><span>${esc(i[1])}</span></li>`).join('')}</ul><div class="ub"><button class="btn" id="u_go">${esc(o.btn)}</button>${o.later?'<button class="btn ghost" id="u_no">Later</button>':''}</div>`;
+  const b=$('upd'),cols=['#ffc233','#ff8a3d','#a78bfa','#2bd2ff','#34d399'];
+  const sp=Array.from({length:16},()=>`<i style="left:${Math.random()*100}%;top:${35+Math.random()*65}%;animation-delay:${(Math.random()*3).toFixed(2)}s;background:${cols[Math.floor(Math.random()*cols.length)]}"></i>`).join('');
+  b.innerHTML=`<div class="um"><div class="spk">${sp}</div><div class="ur go">${o.icon}</div><div class="ut">${esc(o.title)}</div>${o.to?`<div class="uv">${o.from?`<b>v${esc(o.from)}</b><i>→</i>`:''}<b>v${esc(o.to)}</b></div>`:''}${o.sub?`<div class="us">${esc(o.sub)}</div>`:''}${o.items&&o.items.length?`<ul class="ul">${o.items.map(i=>`<li><span>${i[0]}</span><span>${esc(i[1])}</span></li>`).join('')}</ul>`:''}<div class="ub"><button class="btn" id="u_go">${esc(o.btn)}</button>${o.later?'<button class="btn ghost" id="u_no">Later</button>':''}</div></div>`;
   b.classList.remove('on');void b.offsetWidth;b.classList.add('on');
-  $('u_go').onclick=()=>{b.classList.remove('on');if(o.go)o.go()};
-  if(o.later)$('u_no').onclick=()=>b.classList.remove('on');
+  const close=()=>b.classList.remove('on');
+  $('u_go').onclick=()=>{close();if(o.go)o.go()};
+  if(o.later)$('u_no').onclick=close;
+  b.onclick=e=>{if(e.target===b&&o.later)close()};
 }
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('upd').classList.remove('on')});
 let UPD_SEEN='';
 async function checkVersion(){
   try{
@@ -586,7 +625,7 @@ async function checkVersion(){
 setInterval(checkVersion,600000);addEventListener('focus',()=>setTimeout(checkVersion,500));
 
 // ---- Thema, accentkleur, animaties
-let UI={theme:'nacht',accent:null,anim:true};
+let UI={theme:'nacht',accent:null,anim:true,idle:30};
 try{UI={...UI,...JSON.parse(localStorage.getItem('ovb_ui')||'{}')}}catch(e){}
 const shade=(h,p)=>'#'+[1,3,5].map(i=>Math.max(0,Math.min(255,Math.round(parseInt(h.substr(i,2),16)*(1+p)))).toString(16).padStart(2,'0')).join('');
 function applyUI(save){
@@ -594,7 +633,7 @@ function applyUI(save){
   if(UI.accent){r.style.setProperty('--am',UI.accent[0]);r.style.setProperty('--or',UI.accent[1])}else{r.style.removeProperty('--am');r.style.removeProperty('--or')}
   document.querySelectorAll('#c_th button').forEach(b=>b.classList.toggle('on',b.dataset.th===UI.theme));
   document.querySelectorAll('#c_ac button').forEach(b=>b.classList.toggle('on',(b.dataset.ac||'')===(UI.accent?UI.accent.join(','):'')));
-  $('c_an').checked=UI.anim;
+  $('c_an').checked=UI.anim;$('c_idle').value=String(UI.idle);
   const m=document.querySelector('meta[name=theme-color]');if(m)m.content=getComputedStyle(r).getPropertyValue('--bg').trim()||'#090612';
   if(save){try{localStorage.setItem('ovb_ui',JSON.stringify(UI))}catch(e){}}
 }
@@ -635,7 +674,7 @@ function renderLog(){
   let w=0,m=0,a=0;rows.forEach(r=>{a+=r.amt;if(r.t>=wk)w+=r.amt;if(r.t>=mo)m+=r.amt});
   $('o_w').textContent=fmt(w);$('o_m').textContent=fmt(m);$('o_a').textContent=fmt(a);
   $('o_l').innerHTML=rows.map(r=>`<div class="lr"><div><b>${fmt(r.amt)}</b> <span>${esc(r.naam||'')}</span><small>${hm(r.min)} · ${new Date(r.t).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'})}</small></div><button class="x" data-ld="${r.id}" title="Verwijderen">✕</button></div>`).join('')||'<div class="empty">Nog geen stortingen gelogd.<br>Gebruik Log bij een stortingsbericht.</div>';
-  dash();
+  renderChart();dash();
 }
 $('o_l').onclick=e=>{const b=e.target.closest('[data-ld]');if(!b)return;const r=STORT.find(x=>x.id===b.dataset.ld);if(r){r.x=1;touch('stort',r);renderLog()}};
 $('o_clr').onclick=()=>{if(!live(STORT).length||!confirm('Alle gelogde stortingen wissen?'))return;live(STORT).forEach(r=>{r.x=1;touch('stort',r)});renderLog()};
@@ -748,7 +787,7 @@ $('n_del').onclick=()=>{
 };
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'&&$('n').classList.contains('on')){e.preventDefault();ncommit(true)}});
 function refreshAll(){
-  nlist();renderLog();renderCont();
+  nlist();renderLog();renderCont();renderStaff();tplList();
   const n=curN(),ae=document.activeElement;
   if(NID&&!n)nsel(pickN());
   else if(n&&ae!==$('n_b')&&ae!==$('n_t')&&ae!==$('n_lb')&&($('n_b').value!==n.b||$('n_t').value!==n.t||$('n_lb').value!==(n.f||'')))nsel(n.id);
@@ -759,14 +798,14 @@ function greet(){const h=new Date().getHours();return h<6?'Goedenacht':h<12?'Goe
 function clock(){const d=new Date();$('h_c').textContent=d.toLocaleTimeString('nl-NL',{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('h_d').textContent=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});$('h_g').textContent=greet()}
 function dash(){
   $('h_n').textContent=S.naam?S.naam:'Welkom bij het OVB Panel';
-  const miss=KEYS.filter(empty),all=live(NOTES),last=sortN(all)[0],wk=weekStart(),wsum=live(STORT).filter(r=>r.t>=wk).reduce((a,r)=>a+r.amt,0);
+  const stf=staffStats(),miss=KEYS.filter(empty),all=live(NOTES),last=sortN(all)[0],wk=weekStart(),wsum=live(STORT).filter(r=>r.t>=wk).reduce((a,r)=>a+r.amt,0);
   $('h_st').innerHTML=(miss.length?`<div class="si bad" data-go="c">⚠️ ${miss.length} instelling${miss.length>1?'en':''} nog leeg<span>Instellingen →</span></div>`:'<div class="si ok">✅ Instellingen compleet</div>')
-   +`<div class="si" data-go="o">💰 Gestort deze week<span>${fmt(wsum)}</span></div><div class="si" data-go="n">📝 ${all.length} notitie${all.length===1?'':'s'}<span>${last?esc((last.t||'Naamloos').slice(0,26)):'—'}</span></div>`;
+   +`<div class="si" data-go="o">💰 Gestort deze week<span>${fmt(wsum)}</span></div><div class="si" data-go="m">👥 ${stf.n} medewerker${stf.n===1?'':'s'}<span>${stf.w?stf.w+' let op':stf.s+' sancties'}</span></div><div class="si" data-go="n">📝 ${all.length} notitie${all.length===1?'':'s'}<span>${last?esc((last.t||'Naamloos').slice(0,26)):'—'}</span></div>`;
 }
 clock();setInterval(clock,1000);
 
 // ---- Formulieren onthouden + Wissen
-const FORM={s:['s_h','s_m','s_bt'],t:['t_k','t_s','t_dur','t_ts'],x:['x_c'],k:['k_t','k_n','k_r'],r:['r_u','r_h','r_d']};
+const FORM={s:['s_h','s_m','s_bt'],t:['t_k','t_s','t_dur','t_ts'],x:['x_c','x_rd'],k:['k_t','k_n','k_r'],r:['r_u','r_h','r_d']};
 const gv=id=>{const e=$(id);return e.type==='checkbox'?e.checked:e.value};
 const sv2=(id,v)=>{const e=$(id);if(e.type==='checkbox')e.checked=!!v;else if(typeof v==='string')e.value=v};
 const FD={};Object.values(FORM).flat().forEach(id=>FD[id]=gv(id));
@@ -789,7 +828,7 @@ document.addEventListener('click',e=>{
 });
 
 // ---- Backup van alles
-$('c_exp').onclick=()=>{ncommit(false);dl('ovb-panel-backup-'+new Date().toLocaleDateString('sv-SE')+'.json',JSON.stringify({app:'ovb-panel',v:3,settings:S,notes:live(NOTES),stort:live(STORT),contacts:live(CONT)},null,1),'application/json');toast('Backup gemaakt')};
+$('c_exp').onclick=()=>{ncommit(false);dl('ovb-panel-backup-'+new Date().toLocaleDateString('sv-SE')+'.json',JSON.stringify({app:'ovb-panel',v:4,settings:S,notes:live(NOTES),stort:live(STORT),contacts:live(CONT),staff:live(STAFF),sanc:live(SANC),templates:live(TPL)},null,1),'application/json');toast('Backup gemaakt')};
 $('c_imp').onclick=()=>$('c_f').click();
 $('c_f').onchange=async e=>{
   const f=e.target.files[0];e.target.value='';if(!f)return;
@@ -801,16 +840,18 @@ $('c_f').onchange=async e=>{
     merge('notes',j.notes,o=>({id:o.id||nid(),t:String(o.t||''),b:String(o.b||''),f:String(o.f||''),p:!!o.p,u:+o.u||Date.now()}));
     merge('stort',j.stort,o=>({id:o.id||nid(),naam:String(o.naam||''),amt:+o.amt||0,min:+o.min||0,t:+o.t||Date.now()}));
     merge('contacts',j.contacts,o=>({id:o.id||nid(),naam:String(o.naam||''),did:String(o.did||''),u:+o.u||Date.now()}));
-    fillSet();runAll();if(!curN())nsel(pickN());refreshAll();toast('Backup geïmporteerd');
+    const same=o=>({...o,id:o.id||nid(),u:+o.u||Date.now()});
+    merge('staff',j.staff,same);merge('sanc',j.sanc,same);merge('templates',j.templates,same);
+    fillSet();runAll();sharedPush();if(!curN())nsel(pickN());refreshAll();toast('Backup geïmporteerd');
   }catch(_){toast('Dit is geen geldige OVB-backup')}
 };
 
 // ---- Sneltoetsen
-const ORDER=['h','s','t','x','k','r','o','n','c'];
-document.querySelectorAll('#nav button').forEach(b=>{const i=ORDER.indexOf(b.dataset.t);if(i>=0)b.title='Sneltoets '+(i+1)});
+const ORDER=['h','s','t','x','k','r','p','m','o','n','c'];
+document.querySelectorAll('#nav button').forEach(b=>{const i=ORDER.indexOf(b.dataset.t);if(i>=0&&i<10)b.title='Sneltoets '+((i+1)%10)});
 document.addEventListener('keydown',e=>{
   if(e.ctrlKey&&e.key==='Enter'){const p=document.querySelector('.panel.on'),b=p&&(p.id==='n'?$('n_copy'):p.querySelector('[data-c]'));if(b){e.preventDefault();b.click()}return}
-  if(!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&/^[1-9]$/.test(e.key))go(ORDER[+e.key-1]);
+  if(!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&/^[0-9]$/.test(e.key)&&ORDER[(+e.key||10)-1]&&(+e.key||10)<=10)go(ORDER[(+e.key||10)-1]);
 });
 
 // ---- App installeren + offline
@@ -825,8 +866,180 @@ if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol))navigator.s
 const end=()=>{it.classList.add('out');setTimeout(()=>it.remove(),700)};
 if(seen||document.documentElement.dataset.anim==='off')it.remove();else{it.onclick=end;setTimeout(end,1700)}}
 
+// ---- Gedeelde instellingen (uurloon, ID's, verzamelpunten); naam, ID en functie blijven per persoon
+const SHK=['rate','bedrijf','rolS','rolR','punt','puntTaxi'];
+function applyShared(){
+  const o=live(SET)[0];if(!o)return;let ch=false;
+  SHK.forEach(k=>{if(o[k]!==undefined&&String(S[k])!==String(o[k])){S[k]=k==='rate'?(+o[k]||0):String(o[k]);ch=true}});
+  if(ch){try{localStorage.setItem('ovb_s',JSON.stringify(S))}catch(e){}fillSet();runAll()}
+}
+let spt=0;
+function sharedPush(){clearTimeout(spt);spt=setTimeout(()=>{let o=SET[0];if(!o){o={id:'shared',u:0};SET.push(o)}SHK.forEach(k=>o[k]=S[k]);touch('settings',o)},600)}
+$('c').addEventListener('input',e=>{if(SHK.some(k=>e.target.id==='c_'+k))sharedPush()});
+$('c_reset').addEventListener('click',sharedPush);
+
+// ---- Direct bijwerken (realtime)
+function startRealtime(){
+  try{
+    if(!sb.channel)return;
+    sb.channel('ovb-store').on('postgres_changes',{event:'*',schema:'public',table:'store'},p=>{
+      const r=p.new;if(!r||!r.kind||!SMAP[r.kind])return;
+      const arr=SMAP[r.kind](),i=arr.findIndex(o=>o.id===r.id);
+      if((+r.u||0)>(+(i>=0?arr[i].u:0)||0)){if(i>=0)arr[i]=r.d;else arr.push(r.d);saveK(r.kind);if(r.kind==='settings')applyShared();refreshAll()}
+    }).subscribe();
+  }catch(e){}
+}
+
+// ---- Automatisch uitloggen
+let lastAct=Date.now(),idleWarn=false;
+['pointermove','pointerdown','keydown','touchstart','scroll'].forEach(ev=>addEventListener(ev,()=>{lastAct=Date.now()},{passive:true}));
+setInterval(async()=>{
+  const m=+UI.idle;if(!m||!SYN.on)return;
+  const idle=(Date.now()-lastAct)/60000;
+  if(idle>=m){try{ncommit(false)}catch(e){}try{await sb.auth.signOut()}catch(e){}location.reload();return}
+  if(idle>=m-1&&!idleWarn){idleWarn=true;banner({icon:'⏳',title:'Nog even actief?',sub:'Je wordt over 1 minuut automatisch uitgelogd.',btn:'Ingelogd blijven',go:()=>{lastAct=Date.now();idleWarn=false}})}
+  else if(idle<m-1&&idleWarn){idleWarn=false;$('upd').classList.remove('on')}
+},20000);
+$('c_idle').onchange=e=>{UI.idle=+e.target.value;lastAct=Date.now();applyUI(true)};
+
+// ---- Medewerkers + sancties
+let EID=null,SORTE='n',ept=0;
+const curE=()=>STAFF.find(e=>e.id===EID&&!e.x);
+const cleanN=n=>{const m=String(n||'').match(/^<@!?(\d+)>$/);return m?nameOf(m[1]):String(n||'').trim().replace(/^@/,'')};
+const normN=n=>cleanN(n).toLowerCase();
+const empByName=n=>{const m=String(n||'').match(/^<@!?(\d+)>$/);return live(STAFF).find(e=>(m&&e.did===m[1])||normN(e.naam)===normN(n))};
+function sancCount(id){const c={Aanspreking:0,Strike:0,Schorsing:0};live(SANC).filter(x=>x.e===id).forEach(x=>{if(c[x.type]!==undefined)c[x.type]++});return c}
+const lvl=c=>{const t=c.Aanspreking+c.Strike+c.Schorsing;return(c.Schorsing>0||c.Strike>=2||t>=3)?'r':t>0?'o':'g'};
+function staffStats(){const a=live(STAFF);let s=0,w=0;a.forEach(e=>{const c=sancCount(e.id);s+=c.Aanspreking+c.Strike+c.Schorsing;if(lvl(c)==='r')w++});return{n:a.length,s,w}}
+function renderStaff(){
+  const all=live(STAFF),st=staffStats();
+  $('e_cn').textContent=st.n;$('e_cs').textContent=st.s;$('e_cw').textContent=st.w;
+  const fs=[...new Set(all.map(e=>e.f).filter(Boolean))].sort(),ff=$('e_ff'),keep=ff.value;
+  ff.innerHTML='<option value="">Alle functies</option>'+fs.map(f=>`<option>${esc(f)}</option>`).join('');ff.value=fs.includes(keep)?keep:'';
+  $('e_fl').innerHTML=fs.map(f=>`<option value="${esc(f)}">`).join('');
+  $('k_nl').innerHTML=all.map(e=>`<option value="${esc(e.naam)}">`).join('');
+  const q2=$('e_q').value.toLowerCase(),fv=ff.value;
+  const rows=all.filter(e=>(!fv||e.f===fv)&&(e.naam+' '+(e.f||'')).toLowerCase().includes(q2)).map(e=>({e,c:sancCount(e.id)}));
+  const tot=r=>r.c.Aanspreking+r.c.Strike+r.c.Schorsing;
+  rows.sort(SORTE==='s'?(a,b)=>tot(b)-tot(a)||a.e.naam.localeCompare(b.e.naam):SORTE==='f'?(a,b)=>(a.e.f||'~').localeCompare(b.e.f||'~')||a.e.naam.localeCompare(b.e.naam):(a,b)=>a.e.naam.localeCompare(b.e.naam));
+  $('e_l').innerHTML=rows.map(({e,c})=>`<div class="er ${lvl(c)}${e.id===EID?' on':''}${e.s==='inactief'?' off':''}" data-e="${e.id}"><div><b>${esc(e.naam)}</b><small>${esc(e.f||'Geen functie')}${e.s==='inactief'?' · niet actief':''}</small></div><div class="eb"><span class="b" title="Aansprekingen">A ${c.Aanspreking}</span><span class="b" title="Strikes">S ${c.Strike}</span><span class="b" title="Schorsingen">Z ${c.Schorsing}</span></div></div>`).join('')||'<div class="empty">'+(all.length?'Niemand gevonden.':'Nog geen medewerkers.')+'</div>';
+  renderDetail();dash();
+}
+function renderDetail(){
+  const e=curE(),c=$('e_d');
+  if(!e){c.innerHTML='<div class="empty">Kies links een medewerker of voeg er een toe.</div>';return}
+  if(c.contains(document.activeElement)&&c.dataset.id===e.id)return;
+  c.dataset.id=e.id;
+  const cnt=sancCount(e.id),list=live(SANC).filter(x=>x.e===e.id).sort((a,b)=>b.t-a.t);
+  c.innerHTML=`<div class="row"><div><label style="margin-top:0">Naam</label><input data-f="naam" value="${esc(e.naam)}"></div><div><label style="margin-top:0">Functie</label><input data-f="f" list="e_fl" value="${esc(e.f||'')}"></div></div>
+<div class="row"><div><label>Discord-ID</label><input data-f="did" inputmode="numeric" value="${esc(e.did||'')}"></div><div><label>Status</label><select data-f="s"><option value="actief"${e.s!=='inactief'?' selected':''}>Actief</option><option value="inactief"${e.s==='inactief'?' selected':''}>Niet meer actief</option></select></div></div>
+<div class="sums" style="margin-top:16px"><div>Aansprekingen<b>${cnt.Aanspreking}</b></div><div>Strikes<b>${cnt.Strike}</b></div><div>Schorsingen<b>${cnt.Schorsing}</b></div></div>
+<label>Sancties</label><div class="ll" id="e_sl">${list.map(x=>`<div class="lr"><div><b>${esc(x.type)}</b> <span>${new Date(x.t).toLocaleDateString('nl-NL')}</span><small>${esc(x.reden||'Geen reden vermeld')}</small></div><button class="x" data-sd="${x.id}" title="Verwijderen">✕</button></div>`).join('')||'<div class="empty">Geen sancties.</div>'}</div>
+<div class="nt"><button class="btn alt" id="e_go">→ Sanctie maken</button><button class="btn ghost danger" id="e_del">Verwijderen</button></div>`;
+}
+function selE(id){EID=id;$('e_d').dataset.id='';renderStaff()}
+$('e_l').onclick=ev=>{const r=ev.target.closest('[data-e]');if(r)selE(r.dataset.e)};
+$('e_q').oninput=renderStaff;$('e_ff').onchange=renderStaff;$('e_so').onchange=ev=>{SORTE=ev.target.value;renderStaff()};
+$('e_add').onclick=()=>{
+  const naam=$('e_n').value.trim();
+  if(!naam){toast('Vul een naam in');return}
+  if(empByName(naam)){toast('Deze medewerker staat al in de lijst');return}
+  const did=$('e_i').value.trim();
+  if(did&&!/^\d{5,25}$/.test(did)){toast('Een Discord-ID bestaat alleen uit cijfers');return}
+  const e={id:nid(),naam,did,f:$('e_f').value.trim(),s:'actief',u:0};STAFF.push(e);touch('staff',e);
+  ['e_n','e_f','e_i'].forEach(i=>$(i).value='');selE(e.id);toast('Medewerker toegevoegd');
+};
+$('e_d').addEventListener('input',ev=>{
+  const f=ev.target.dataset.f,e=curE();if(!f||!e)return;
+  e[f]=ev.target.value;clearTimeout(ept);ept=setTimeout(()=>{touch('staff',e);renderStaff()},500);
+});
+$('e_d').addEventListener('click',ev=>{
+  const e=curE(),sd=ev.target.closest('[data-sd]');
+  if(sd){const x=SANC.find(s=>s.id===sd.dataset.sd);if(x){x.x=1;touch('sanc',x);$('e_d').dataset.id='';renderStaff()}return}
+  if(!e)return;
+  if(ev.target.closest('#e_go')){go('k');$('k_n').value=e.naam;$('k').dispatchEvent(new Event('input',{bubbles:true}))}
+  if(ev.target.closest('#e_del')&&confirm('Deze medewerker verwijderen? De gelogde sancties blijven bewaard.')){e.x=1;touch('staff',e);EID=null;renderStaff()}
+});
+function logSanc(sl){
+  let e=empByName(sl.naam);
+  if(!e){e={id:nid(),naam:cleanN(sl.naam),did:'',f:'',s:'actief',u:0};STAFF.push(e);touch('staff',e);toast('Medewerker toegevoegd aan de lijst')}
+  const x={id:nid(),e:e.id,naam:e.naam,type:sl.type,reden:sl.reden||'',t:Date.now(),u:0};SANC.push(x);touch('sanc',x);
+  $('e_d').dataset.id='';renderStaff();return e;
+}
+function procRanks(list){
+  let n=0;
+  list.forEach(r=>{let e=empByName(r.naam);if(e){e.f=r.rank;touch('staff',e)}else{e={id:nid(),naam:cleanN(r.naam),did:'',f:r.rank,s:'actief',u:0};STAFF.push(e);touch('staff',e)}n++});
+  $('e_d').dataset.id='';renderStaff();toast(n+(n===1?' medewerker bijgewerkt':' medewerkers bijgewerkt'));
+}
+document.addEventListener('click',e=>{
+  const sl=e.target.closest('[data-sl]'),rk=e.target.closest('[data-rk]'),b=sl||rk,c=b&&b.closest('.out');if(!c)return;
+  const x=c._a[+(sl?sl.dataset.sl:rk.dataset.rk)];if(!x)return;
+  if(sl&&x.sl){const m=logSanc(x.sl);sl.textContent='✓ Gelogd';sl.disabled=true;toast(x.sl.type+' gelogd voor '+m.naam)}
+  if(rk&&x.rk){procRanks(x.rk);rk.textContent='✓ Verwerkt';rk.disabled=true}
+});
+
+// ---- Eigen sjablonen
+let PTID=null,PV={},PSIG='';
+const RESV={datum:()=>{const d=new Date();return d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear()},tijd:()=>new Date().toLocaleTimeString('nl-NL',{hour:'2-digit',minute:'2-digit'}),ik:()=>ME(),mijnnaam:()=>S.naam||'',functie:()=>S.titel||'',bedrijf:()=>S.bedrijf||''};
+const fieldsOf=b=>[...new Set([...b.matchAll(/\{([a-zA-Z0-9_]+)\}/g)].map(m=>m[1]))];
+const EXAMPLES=[
+ ['Welkom','> **Welkom bij {bedrijf}, {naam}!** 🎉\n>\n> Je start als **{rol}**. Je trainer is {trainer}.\n> Heb je vragen? Stuur gerust een bericht.\n>\n> *Met vriendelijke groet,*\n> *{mijnnaam}*'],
+ ['Promotie','> 🎉 **Gefeliciteerd {naam}!**\n>\n> Je bent gepromoveerd naar **{rol}**. Dit is ingegaan op {datum}.\n> Bedankt voor je inzet!\n>\n> *{mijnnaam}, {functie}*'],
+ ['Ontslag','> Geachte {naam},\n>\n> Hierbij bevestigen wij dat uw dienstverband bij {bedrijf} per {datum} is beëindigd.\n> Reden: {reden}\n>\n> *Met vriendelijke groet,*\n> *{mijnnaam}*\n> *{functie}*'],
+ ['Evenement','> 📅 **{titel}**\n>\n> - *Datum: {datum}*\n> - *Tijd: {tijd}*\n> - *Plaats: {plaats}*\n> - *Host: {ik}*\n>\n> Reageer met ✅ of ❌.']
+];
+function tplList(){
+  const sel=$('p_sel'),keep=PTID,all=live(TPL).sort((a,b)=>a.n.localeCompare(b.n));
+  sel.innerHTML='<option value="">— Nieuw sjabloon —</option>'+all.map(t=>`<option value="${t.id}">${esc(t.n||'Naamloos')}</option>`).join('');
+  sel.value=all.some(t=>t.id===keep)?keep:'';
+}
+function tplLoad(id){
+  PTID=id||null;const t=live(TPL).find(x=>x.id===id);
+  $('p_n').value=t?t.n:'';$('p_b').value=t?t.b:'';PV={};PSIG='';$('p_sel').value=t?id:'';tplRender();
+}
+function tplRender(){
+  const b=$('p_b').value,names=fieldsOf(b).filter(n=>!(n.toLowerCase() in RESV)),sig=names.join('|');
+  if(sig!==PSIG){PSIG=sig;$('p_f').innerHTML=names.map(n=>`<label>${esc(n.replace(/_/g,' '))}</label><input data-pf="${esc(n)}" value="${esc(PV[n]||'')}">`).join('')}
+  const miss=names.filter(n=>!String(PV[n]||'').trim());
+  if(!b.trim()){show('p_o',[]);return}
+  if(miss.length){const c=$('p_o');c._a=[];c.innerHTML=`<div class="warn"><b>Nog niet compleet</b><p>Vul in: ${esc(miss.map(n=>n.replace(/_/g,' ')).join(', '))}</p></div>`;return}
+  const txt=b.replace(/\{([a-zA-Z0-9_]+)\}/g,(m,n)=>{const k=n.toLowerCase();return k in RESV?RESV[k]():(PV[n]!==undefined?PV[n]:m)});
+  show('p_o',[{label:$('p_n').value,txt}]);
+}
+$('p_sel').onchange=e=>tplLoad(e.target.value);
+$('p_new').onclick=()=>{tplLoad('');$('p_n').focus()};
+$('p_n').oninput=$('p_b').oninput=tplRender;
+$('p_f').oninput=e=>{const n=e.target.dataset.pf;if(n!==undefined){PV[n]=e.target.value;tplRender()}};
+$('p_save').onclick=()=>{
+  const n=$('p_n').value.trim(),b=$('p_b').value;
+  if(!n||!b.trim()){toast('Geef het sjabloon een naam en een tekst');return}
+  let t=live(TPL).find(x=>x.id===PTID);
+  if(!t){t={id:nid(),n,b,u:0};TPL.push(t);PTID=t.id}else{t.n=n;t.b=b}
+  touch('templates',t);tplList();$('p_sel').value=t.id;toast('Sjabloon opgeslagen');
+};
+$('p_del').onclick=()=>{const t=live(TPL).find(x=>x.id===PTID);if(!t||!confirm('Dit sjabloon verwijderen?'))return;t.x=1;t.n='';t.b='';touch('templates',t);tplList();tplLoad('')};
+$('p_ex').onclick=()=>{
+  let n=0;EXAMPLES.forEach(([nm,b])=>{if(!live(TPL).some(t=>t.n===nm)){const t={id:nid(),n:nm,b,u:0};TPL.push(t);touch('templates',t);n++}});
+  tplList();toast(n?n+' voorbeeldsjablonen toegevoegd':'De voorbeelden staan er al');
+};
+
+// ---- Grafiek stortingen
+let chartMode='w';
+const shortAmt=v=>v>=1e6?(v/1e6).toFixed(1).replace('.0','')+'M':v>=1e3?Math.round(v/1e3)+'K':String(v);
+function renderChart(){
+  const rows=live(STORT),now=new Date(),bk=[];
+  if(chartMode==='w'){const ws=new Date(weekStart());for(let i=7;i>=0;i--){const s=new Date(ws);s.setDate(s.getDate()-7*i);const e=new Date(s);e.setDate(e.getDate()+7);bk.push({s:s.getTime(),e:e.getTime(),l:s.getDate()+'/'+(s.getMonth()+1)})}}
+  else for(let i=5;i>=0;i--){const s=new Date(now.getFullYear(),now.getMonth()-i,1),e=new Date(now.getFullYear(),now.getMonth()-i+1,1);bk.push({s:s.getTime(),e:e.getTime(),l:s.toLocaleDateString('nl-NL',{month:'short'})})}
+  bk.forEach(b=>{b.v=rows.filter(r=>r.t>=b.s&&r.t<b.e).reduce((a,r)=>a+r.amt,0)});
+  const max=Math.max(1,...bk.map(b=>b.v)),W=320,H=130,n=bk.length,bw=Math.min(30,(W-20)/n-8),gap=(W-n*bw)/(n+1);
+  $('o_ch').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Stortingen per ${chartMode==='w'?'week':'maand'}">`+bk.map((b,i)=>{
+    const h=Math.max(b.v?3:0,(b.v/max)*(H-44)),x=gap+i*(bw+gap),y=H-22-h;
+    return `<g><rect class="bar" style="animation-delay:${i*60}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="5"><title>${esc(b.l)}: ${fmt(b.v)}</title></rect><text x="${x+bw/2}" y="${H-7}" text-anchor="middle" class="bl">${esc(b.l)}</text>${b.v?`<text x="${x+bw/2}" y="${y-4}" text-anchor="middle" class="bv">${shortAmt(b.v)}</text>`:''}</g>`}).join('')+'</svg>';
+}
+seg('o_seg',v=>{chartMode=v;renderChart()});
+
 // ---- Startwaarden
-setSy('off');renderHist();renderCont();renderLog();nsel(pickN());
+setSy('off');renderHist();renderCont();renderLog();renderStaff();tplList();tplLoad('');nsel(pickN());applyUI(false);
 
 document.querySelectorAll('.seg').forEach(sg=>sg.insertAdjacentHTML('afterbegin','<i class="th"></i>'));
 fillSet();runAll();go('h');
