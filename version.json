@@ -1,13 +1,6 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "changes": [
-    ["👥", "Medewerkers met functie en sancties per persoon"],
-    ["🧩", "Eigen sjablonen met invulvelden"],
-    ["⚡", "Direct bijwerken tussen apparaten"],
-    ["🔒", "Automatisch uitloggen bij inactiviteit"],
-    ["⚙️", "Gedeelde instellingen voor iedereen"],
-    ["📊", "Grafiek van stortingen per week en maand"],
-    ["📅", "Herexamendatum bij een gezakt taxi-examen"],
-    ["🚀", "Nieuwe pop-up bij updates"]
+    ["🎨", "Nieuw OVB-logo in het panel, de browsertab en de app"]
   ]
 }
