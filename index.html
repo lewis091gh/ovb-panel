@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl"><head><meta charset="utf-8"><title>OVB Panel</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="OVB Panel"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#090612">
 <script>try{var u=JSON.parse(localStorage.getItem('ovb_ui')||'{}'),r=document.documentElement;r.dataset.theme=u.theme||'nacht';if(u.accent){r.style.setProperty('--am',u.accent[0]);r.style.setProperty('--or',u.accent[1])}r.dataset.anim=u.anim===false?'off':'on'}catch(e){}</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script><link rel="icon" type="image/png" href="data:image/png;base64,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"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest">
@@ -173,6 +174,47 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 #p_b{min-height:200px;resize:vertical;font:14px/1.55 ui-monospace,'Cascadia Code',Consolas,monospace}
 .tg{font-style:normal;margin-left:6px;padding:1px 8px;border-radius:99px;background:rgba(52,211,153,.15);color:#34d399;font-size:10px;text-transform:none;letter-spacing:0}.tg.me{background:rgba(255,194,51,.15);color:var(--at)}
 @media(min-width:861px) and (min-height:640px){#e_l{max-height:calc(100vh - 520px);min-height:110px}#p_b{height:calc(100vh - 440px)}.ll{max-height:calc(100vh - 560px);min-height:80px}}
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{min-height:100vh;min-height:100dvh;-webkit-tap-highlight-color:transparent}
+button,.tile,.ni,.er,.si,.hr{touch-action:manipulation}
+.wrap{padding-top:calc(18px + env(safe-area-inset-top));padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+.mh{flex-wrap:wrap}.sums{flex-wrap:wrap}.sums div{min-width:90px}
+.pv .sp.show{color:inherit;background:#2b2d31}
+.sy .sw{margin-left:4px}
+#mnav,#sheet{display:none}
+#sheet_g button{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px;border-radius:14px;border:1px solid var(--bd);background:var(--in);color:var(--tx);font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+#sheet_g button .ic{font-size:26px;display:block}#sheet_g button.on{border-color:var(--am);background:rgba(255,194,51,.1)}
+@media(hover:none),(pointer:coarse){.keys{display:none}.cur{display:none}}
+@media(pointer:coarse){.btn,.x,.tb button,.seg button,.vt button{min-height:44px}.cp{min-height:36px}.x{min-width:44px}.ni,.er,.si{min-height:48px}}
+@media(max-width:860px){.panel.on{grid-template-columns:1fr}.card{min-width:0}}
+@media(max-width:700px){
+  .dock{display:none}
+  .top{flex-direction:row;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.blogo{margin:0;width:112px;height:28px}
+  .tools .sw{display:none}.sy{padding:8px 12px}
+  .wrap{padding:calc(12px + env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) calc(96px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+  #mnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:2px;padding:6px max(6px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));background:var(--dk);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--bd)}
+  #mnav button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px;border:0;border-radius:14px;background:none;color:var(--mut);font:inherit;font-size:11px;font-weight:600;transition:.25s}
+  #mnav button span{font-size:20px;line-height:1;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}#mnav button.on{color:#1d0d00;background:linear-gradient(135deg,var(--am),var(--or))}#mnav button.on span{transform:scale(1.15)}
+  #sheet{display:block;position:fixed;inset:0;z-index:60;background:rgba(6,3,16,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}#sheet.on{opacity:1;visibility:visible}
+  .sh{position:absolute;left:0;right:0;bottom:0;max-height:82vh;max-height:82dvh;overflow:auto;border-radius:24px 24px 0 0;padding:10px 16px calc(26px + env(safe-area-inset-bottom));background:var(--c1);border-top:1px solid var(--bd);transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.9,.3,1.1)}#sheet.on .sh{transform:none}
+  .grab{width:44px;height:5px;border-radius:5px;background:var(--bd);margin:0 auto 14px}#sheet_g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  #toast{bottom:calc(92px + env(safe-area-inset-bottom));max-width:calc(100vw - 32px);text-align:center}
+  input,select,textarea{font-size:16px}
+  .row{flex-wrap:wrap}.row>*{min-width:130px}
+  .card{padding:16px;border-radius:18px}.hero{align-items:flex-start}.hc{text-align:left}
+  .lg{width:130px;height:32px}.ub{flex-direction:column}.um{padding:22px 18px 18px}
+  .mh{gap:8px}.nt .btn{min-width:46%}
+  .pop{position:fixed;left:12px;right:12px;top:auto;bottom:calc(90px + env(safe-area-inset-bottom));width:auto;max-height:50vh}
+  .lg,.lr,.hr{min-width:0}
+}
+@media(max-width:560px){.sg{grid-template-columns:1fr}.themes{grid-template-columns:repeat(2,1fr)}.eg{grid-template-columns:repeat(6,1fr)}.sums b{font-size:15px}.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:380px){.tiles{grid-template-columns:repeat(2,1fr)}#sheet_g{grid-template-columns:repeat(2,1fr)}.wrap{padding-left:8px;padding-right:8px}}
+@media(max-height:520px) and (orientation:landscape){#mnav button span{font-size:16px}#mnav button{flex-direction:row;justify-content:center;gap:6px;padding:6px}}
+.stat small{display:block;margin-top:6px;font-weight:500;letter-spacing:0;font-size:12px;color:var(--mut)}.stat small:empty{display:none}
+.cg-line{fill:none;stroke:var(--am);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;animation:draw 1.3s ease both}@keyframes draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+.cg-area{animation:fadein .9s .5s both}@keyframes fadein{from{opacity:0}}
+.pt{fill:var(--c1);stroke:var(--am);stroke-width:2;cursor:pointer;transition:r .2s;animation:fadein .5s both}.pt:hover{r:6}.gl{stroke:var(--bd);stroke-width:1;stroke-dasharray:3 4}.gy{fill:var(--mut);font-size:8.5px}
+details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color:var(--at)}
 </style></head><body data-vm="p">
 <div id="lock"><div class="card" style="width:100%;max-width:380px;text-align:center"><div class="blogo" style="margin:0 auto 20px;width:160px;height:39px;cursor:default"></div>
 <form id="lf"><label style="text-align:left">Wachtwoord</label><input id="lp" type="password" required autocomplete="current-password" autofocus><div id="le"></div><button class="btn" id="lb" type="submit" style="margin:0">Inloggen</button></form></div></div>
@@ -194,11 +236,12 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 
 <section class="panel" id="s">
 <div class="card">
-<div class="seg" id="s_seg"><button data-v="m" class="on">Handmatig</button><button data-v="b">Lijst plakken</button></div>
+<div class="seg" id="s_seg"><button data-v="m" class="on">Uren en minuten</button><button data-v="b">Lijst plakken</button><button data-v="a">Bedrag typen</button></div>
 <div id="s_man"><div class="row"><div><label>Uren</label><input id="s_h" type="number" min="0" value="0"></div><div><label>Minuten</label><input id="s_m" type="number" min="0" value="0"></div></div>
-<div class="stat"><span id="s_rl"></span><b id="s_amt">€ 0</b></div></div>
+<div class="stat"><span id="s_rl"></span><b id="s_amt">€ 0,00</b><small id="s_tx"></small></div></div>
+<div id="s_amtm" class="hide"><label>Bedrag (€)</label><input id="s_av" inputmode="decimal" autocomplete="off" placeholder="Bijvoorbeeld 110.010,55"><div class="stat"><span>Bedrag in het bericht</span><b id="s_ab">€ 0,00</b></div></div>
 <div id="s_bulk" class="hide"><label>Plak de lijst</label><textarea id="s_bt" rows="8" placeholder="1 - &lt;@123456789&gt; - 123456789 - 5 shifts - 9474532ms - 2 hours, 37 minutes, 55 seconds"></textarea>
-<div class="stat">Totaal (afgerond per persoon)<b id="s_bsum">€ 0</b></div></div><button class="btn ghost" data-clear="s">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Vul uren en minuten in: het bedrag volgt uit het uurloon bij Instellingen. Bij Lijst plakken geef je een lijst met mensen en tijden; iedereen krijgt een eigen bericht en meer dan 30 seconden telt als 1 minuut erbij.</p></details></div>
+<div class="stat">Totaal (afgerond per persoon)<b id="s_bsum">€ 0</b></div></div><button class="btn ghost" data-clear="s">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Vul uren en minuten in: het bedrag volgt uit het uurloon bij Instellingen, minus de belasting (standaard 9,5%, aan te passen). Met Bedrag typen vul je zelf een bedrag in, bijvoorbeeld 110.010,55; dat wordt zonder belasting overgenomen. Bij Lijst plakken geef je een lijst met mensen en tijden; iedereen krijgt een eigen bericht en meer dan 30 seconden telt als 1 minuut erbij.</p></details></div>
 <div class="card"><div class="out" id="s_o"></div></div></section>
 
 <section class="panel" id="t">
@@ -250,6 +293,7 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 <section class="panel" id="o">
 <div class="card"><div class="sums"><div>Deze week<b id="o_w">€ 0</b></div><div>Deze maand<b id="o_m">€ 0</b></div><div>Totaal<b id="o_a">€ 0</b></div></div>
 <div class="seg" id="o_seg" style="margin-top:14px"><button data-v="w" class="on">Per week</button><button data-v="m">Per maand</button></div><div class="chart" id="o_ch"></div>
+<details class="help add"><summary>＋ Bedrag handmatig loggen</summary><div class="row" style="margin-top:10px"><input id="o_a1" inputmode="decimal" autocomplete="off" placeholder="Bedrag, bijv. 110.010,55"><input id="o_n1" placeholder="Naam (optioneel)"></div><div class="row" style="margin-top:8px"><input id="o_d1" type="date"><button class="btn" id="o_add" style="margin:0;padding:10px">Loggen</button></div></details>
 <label>Stortingen</label><div class="ll" id="o_l"></div>
 <div class="nt"><button class="btn ghost" id="o_csv">⬇ CSV</button><button class="btn ghost danger" id="o_clr">Alles wissen</button></div>
 <details class="help"><summary>ⓘ Uitleg</summary><p>Stortingen die je bij Stortingen met Log vastlegt, komen hier met totalen per week en maand. Je kunt ze exporteren naar CSV. Rechts staan je laatst gekopieerde berichten, zodat je ze opnieuw kunt gebruiken.</p></details></div>
@@ -271,7 +315,7 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 </section>
 
 <section class="panel" id="c">
-<div class="card"><div class="sg"><div><label>Verdienste per uur (€)<i class="tg">gedeeld</i></label><input id="c_rate" type="number" min="0"></div><div><label>Bedrijfsnaam (stortingen)<i class="tg">gedeeld</i></label><input id="c_bedrijf"></div><div><label>Jouw Discord-ID<i class="tg me">alleen jij</i></label><input id="c_me" placeholder="Vul hier je eigen Discord-ID in"></div><div><label>Jouw naam (handtekening)<i class="tg me">alleen jij</i></label><input id="c_naam" placeholder="Vul hier je eigen naam in"></div><div><label>Functie<i class="tg me">alleen jij</i></label><input id="c_titel" placeholder="Vul hier je functie in"></div><div><label>Rol-ID storting<i class="tg">gedeeld</i></label><input id="c_rolS"></div><div><label>Rol-ID ranks<i class="tg">gedeeld</i></label><input id="c_rolR"></div><div><label>Verzamelpunt Bus-training<i class="tg">gedeeld</i></label><input id="c_punt"></div><div><label>Verzamelpunt Taxi-training<i class="tg">gedeeld</i></label><input id="c_puntTaxi"></div></div><button class="btn alt" id="c_reset">Standaardwaarden herstellen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Gedeelde instellingen gelden voor iedereen die inlogt. Je Discord-ID, naam en functie blijven alleen op dit apparaat. Zonder je Discord-ID, naam en functie kun je niet alle berichten maken. Thema, accentkleur en animaties gelden alleen voor dit apparaat.</p></details></div>
+<div class="card"><div class="sg"><div><label>Verdienste per uur (€)<i class="tg">gedeeld</i></label><input id="c_rate" type="number" min="0"></div><div><label>Belasting (%)<i class="tg">gedeeld</i></label><input id="c_tax" type="number" min="0" max="100" step="0.1"></div><div><label>Belasting verwerken<i class="tg">gedeeld</i></label><select id="c_taxMode"><option value="min">Aftrekken van het bedrag</option><option value="plus">Erbij optellen</option></select></div><div><label>Bedrijfsnaam (stortingen)<i class="tg">gedeeld</i></label><input id="c_bedrijf"></div><div><label>Jouw Discord-ID<i class="tg me">alleen jij</i></label><input id="c_me" placeholder="Vul hier je eigen Discord-ID in"></div><div><label>Jouw naam (handtekening)<i class="tg me">alleen jij</i></label><input id="c_naam" placeholder="Vul hier je eigen naam in"></div><div><label>Functie<i class="tg me">alleen jij</i></label><input id="c_titel" placeholder="Vul hier je functie in"></div><div><label>Rol-ID storting<i class="tg">gedeeld</i></label><input id="c_rolS"></div><div><label>Rol-ID ranks<i class="tg">gedeeld</i></label><input id="c_rolR"></div><div><label>Verzamelpunt Bus-training<i class="tg">gedeeld</i></label><input id="c_punt"></div><div><label>Verzamelpunt Taxi-training<i class="tg">gedeeld</i></label><input id="c_puntTaxi"></div></div><button class="btn alt" id="c_reset">Standaardwaarden herstellen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Gedeelde instellingen gelden voor iedereen die inlogt. Je Discord-ID, naam en functie blijven alleen op dit apparaat. Zonder je Discord-ID, naam en functie kun je niet alle berichten maken. Thema, accentkleur en animaties gelden alleen voor dit apparaat.</p></details></div>
 <div class="card"><label style="margin-top:0">Thema</label><div class="themes" id="c_th"><button data-th="nacht"><i style="--a:#8b5cf6;--b:#090612"></i>Nacht</button><button data-th="licht"><i style="--a:#ffffff;--b:#c9bff5"></i>Licht</button><button data-th="ovb"><i style="--a:#3b82f6;--b:#06101f"></i>OVB</button><button data-th="bus"><i style="--a:#ffcc00;--b:#24272c"></i>Bus</button></div>
 <label>Accentkleur</label><div class="sw" id="c_ac"><button data-ac="" style="--c:transparent" title="Standaard van het thema">⟲</button><button data-ac="#ffc233,#ff8a3d" style="--c:#ffc233" title="Amber"></button><button data-ac="#ff6bb5,#ff3c7a" style="--c:#ff6bb5" title="Roze"></button><button data-ac="#2bd2ff,#2b8cff" style="--c:#2bd2ff" title="Cyaan"></button><button data-ac="#34d399,#10b981" style="--c:#34d399" title="Groen"></button><button data-ac="#a78bfa,#8b5cf6" style="--c:#a78bfa" title="Paars"></button><input type="color" id="c_acc" title="Eigen kleur" value="#ffc233"></div>
 <label class="chk"><input type="checkbox" id="c_an" checked> Animaties aan</label>
@@ -279,16 +323,25 @@ html[data-anim=off] *,html[data-anim=off] *:before,html[data-anim=off] *:after{a
 <label>Backup</label><div class="nt"><button class="btn ghost" id="c_exp">⬇ Alles exporteren</button><button class="btn ghost" id="c_imp">⬆ Alles importeren</button></div><input type="file" id="c_f" class="hide" accept=".json,application/json">
 <div class="ver"><span>Versie <b id="c_v"></b></span><button class="btn ghost" id="c_new" style="width:auto;margin:0;padding:8px 14px">Wat is nieuw</button></div></div>
 </section>
-</main><div id="toast"></div>
+</main><nav id="mnav"><button data-t="h"><span>🏠</span>Home</button><button data-t="s"><span>💰</span>Storting</button><button data-t="t"><span>🚌</span>Training</button><button data-t="n"><span>📝</span>Notities</button><button id="m_more"><span>☰</span>Meer</button></nav>
+<div id="sheet"><div class="sh"><div class="grab"></div><div id="sheet_g"></div></div></div>
+<div id="toast"></div>
 <script>
 const $=id=>document.getElementById(id);
 const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const q=a=>a.map(l=>l===''?'>':'> '+l).join('\n');
-const fmt=n=>'€ '+n.toLocaleString('nl-NL');
+const fmt=n=>'€ '+(+n||0).toLocaleString('nl-NL',{minimumFractionDigits:2,maximumFractionDigits:2});
+const r2=n=>Math.round((+n||0)*100)/100;
+function parseAmt(v){
+  let t=String(v||'').replace(/[€\s]/g,'');if(!t)return NaN;
+  if(t.includes(','))t=t.replace(/\./g,'').replace(',','.');
+  else if(/^\d{1,3}(\.\d{3})+$/.test(t))t=t.replace(/\./g,'');
+  const n=parseFloat(t);return isFinite(n)&&n>=0?r2(n):NaN;
+}
 const hm=m=>Math.floor(m/60)+'u '+m%60+'m';
 
 // ---- Standaardwaarden (pas hier aan of via het tabblad Instellingen)
-const DEF={rate:10000,bedrijf:'Openbaar Vervoer Benelux',me:'',rolS:'1380954656859095162',rolR:'1462178224652947748',naam:'',titel:'',punt:'Civilian Spawn, River City',puntTaxi:'Civilian Spawn, River City'};
+const DEF={rate:10000,tax:9.5,taxMode:'min',bedrijf:'Openbaar Vervoer Benelux',me:'',rolS:'1380954656859095162',rolR:'1462178224652947748',naam:'',titel:'',punt:'Civilian Spawn, River City',puntTaxi:'Civilian Spawn, River City'};
 let S={...DEF};try{S={...DEF,...JSON.parse(localStorage.getItem('ovb_s')||'{}')}}catch(e){}
 const ME=()=>S.me?'<@'+S.me+'>':'[Discord-ID]';
 
@@ -297,10 +350,12 @@ const TT={s:['💰 Stortingen','Bereken het bedrag en maak je stortingsbericht']
 function moveInd(){const b=document.querySelector('#nav button.on'),i=document.querySelector('.ind');if(b&&i){i.style.left=b.offsetLeft+'px';i.style.top=b.offsetTop+'px';i.style.width=b.offsetWidth+'px';i.style.height=b.offsetHeight+'px'}}
 function moveTh(sg){const b=sg.querySelector('button.on'),t=sg.querySelector('.th');if(b&&t){t.style.left=b.offsetLeft+'px';t.style.width=b.offsetWidth+'px'}}
 const relayout=()=>{moveInd();document.querySelectorAll('.seg').forEach(moveTh)};
-function go(id){
+function go(id,np){
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));
-  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));
-  relayout();
+  document.querySelectorAll('#nav button,#mnav [data-t],#sheet_g button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));
+  const mm=$('m_more');if(mm)mm.classList.toggle('on',!['h','s','t','n'].includes(id));
+  if(!np&&location.hash.slice(1)!==id){try{history.pushState(null,'','#'+id)}catch(e){}}
+  window.scrollTo(0,0);relayout();
 }
 $('nav').onclick=e=>{const b=e.target.closest('button');if(b)go(b.dataset.t)};
 
@@ -371,32 +426,47 @@ function countTo(id,val){
   const el=$(id),from=cur[id]||0;cur[id]=val;
   if(from===val){el.textContent=fmt(val);return}
   el.classList.remove('pulse');void el.offsetWidth;el.classList.add('pulse');
-  const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/450),e=1-Math.pow(1-p,3);el.textContent=fmt(Math.round(from+(val-from)*e));if(p<1)requestAnimationFrame(f)})(t0);
+  const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/450),e=1-Math.pow(1-p,3);el.textContent=fmt(Math.round((from+(val-from)*e)*100)/100);if(p<1)requestAnimationFrame(f)})(t0);
 }
 function seg(id,fn){$(id).querySelectorAll('button').forEach(b=>b.onclick=()=>{$(id).querySelectorAll('button').forEach(o=>o.classList.toggle('on',o===b));moveTh($(id));fn(b.dataset.v)})}
 
 // ---- Stortingen
 let sm='m';
 const msg=(who,amt)=>'__**Storting**__\n'+q(['- *Naam:* '+who,'- *Bedrijf:* '+S.bedrijf,'- *Bedrag:* '+fmt(amt),'- *<@&'+S.rolS+'>*']);
+const taxPct=()=>Math.max(0,parseFloat(String(S.tax).replace(',','.'))||0);
+function calc(min){
+  const gc=Math.round(min*(+S.rate||0)*100/60),tc=Math.round(gc*taxPct()/100),nc=S.taxMode==='plus'?gc+tc:gc-tc;
+  return {gross:gc/100,tax:tc/100,net:nc/100};
+}
 function parseLine(l){
   const m=l.match(/<@!?(\d+)>/),tail=l.split(' - ').pop();
   const g=r=>{const x=tail.match(r);return x?+x[1]:0};
   const h=g(/(\d+)\s*hours?/i),mi=g(/(\d+)\s*minutes?/i),se=g(/(\d+)\s*seconds?/i);
   if(!m||!(h||mi||se))return null;
-  const min=h*60+mi+(se>30?1:0);return {id:m[1],min,amt:Math.round(min*S.rate/60)};
+  const min=h*60+mi+(se>30?1:0),c=calc(min);return {id:m[1],min,amt:c.net,bruto:c.gross,tax:c.tax};
 }
 function storting(){
-  $('s_rl').textContent='Bedrag ('+S.rate.toLocaleString('nl-NL')+' per uur)';
+  const tp=taxPct(),sg=S.taxMode==='plus'?'+':'−';
+  $('s_rl').textContent='Bedrag ('+(+S.rate||0).toLocaleString('nl-NL')+' per uur'+(tp?', '+sg+tp.toLocaleString('nl-NL')+'% belasting':'')+')';
   if(sm==='m'){
-    const min=(+$('s_h').value||0)*60+(+$('s_m').value||0),amt=Math.round(min*S.rate/60);
-    countTo('s_amt',amt);if(need('s_o',['rate','bedrijf','rolS','me']))return;if(check('s','s_o',[['s_h,s_m',!(min>0),'Vul uren of minuten in.']]))return;show('s_o',[{label:hm(min),txt:msg(ME(),amt),lg:{naam:S.naam||'Zelf',amt,min}}]);
+    const min=(+$('s_h').value||0)*60+(+$('s_m').value||0),c=calc(min);
+    countTo('s_amt',c.net);
+    $('s_tx').textContent=tp?'Bruto '+fmt(c.gross)+' '+sg+' belasting '+fmt(c.tax):'';
+    if(need('s_o',['rate','bedrijf','rolS','me']))return;if(check('s','s_o',[['s_h,s_m',!(min>0),'Vul uren of minuten in.']]))return;
+    show('s_o',[{label:hm(min),txt:msg(ME(),c.net),lg:{naam:S.naam||'Zelf',amt:c.net,min,bruto:c.gross,tax:c.tax}}]);
+  }else if(sm==='a'){
+    const a=parseAmt($('s_av').value);
+    countTo('s_ab',isNaN(a)?0:a);
+    if(need('s_o',['bedrijf','rolS','me']))return;
+    if(check('s','s_o',[['s_av',!(a>0),'Vul een geldig bedrag in, bijvoorbeeld 110.010,55.']]))return;
+    show('s_o',[{label:'Bedrag getypt',txt:msg(ME(),a),lg:{naam:S.naam||'Zelf',amt:a,min:0}}]);
   }else{
     const rows=$('s_bt').value.split('\n').map(l=>l.trim()).filter(Boolean).map(parseLine).filter(Boolean);
-    countTo('s_bsum',rows.reduce((a,r)=>a+r.amt,0));if(need('s_o',['rate','bedrijf','rolS']))return;{const n=$('s_bt').value.split('\n').filter(l=>l.trim()).length;if(check('s','s_o',[['s_bt',!n,'Plak eerst je lijst.'],['s_bt',n&&!rows.length,'Geen geldige regels gevonden. Elke regel heeft een @mention en een tijd nodig.']]))return}
-    show('s_o',rows.map(r=>({label:hm(r.min)+' (afgerond)',txt:msg('<@'+r.id+'>',r.amt),lg:{naam:nameOf(r.id),amt:r.amt,min:r.min}})));
+    countTo('s_bsum',r2(rows.reduce((a,r)=>a+r.amt,0)));if(need('s_o',['rate','bedrijf','rolS']))return;{const n=$('s_bt').value.split('\n').filter(l=>l.trim()).length;if(check('s','s_o',[['s_bt',!n,'Plak eerst je lijst.'],['s_bt',n&&!rows.length,'Geen geldige regels gevonden. Elke regel heeft een @mention en een tijd nodig.']]))return}
+    show('s_o',rows.map(r=>({label:hm(r.min)+' (afgerond)',txt:msg('<@'+r.id+'>',r.amt),lg:{naam:nameOf(r.id),amt:r.amt,min:r.min,bruto:r.bruto,tax:r.tax}})));
   }
 }
-seg('s_seg',v=>{sm=v;$('s_man').classList.toggle('hide',v==='b');$('s_bulk').classList.toggle('hide',v==='m');storting()});
+seg('s_seg',v=>{sm=v;$('s_man').classList.toggle('hide',v!=='m');$('s_bulk').classList.toggle('hide',v!=='b');$('s_amtm').classList.toggle('hide',v!=='a');storting()});
 
 // ---- Training
 function training(){
@@ -453,13 +523,13 @@ function rank(){
 }
 
 // ---- Instellingen (alleen in je eigen browser)
-const KEYS=['rate','bedrijf','me','rolS','rolR','naam','titel','punt','puntTaxi'];
+const KEYS=['rate','tax','taxMode','bedrijf','me','rolS','rolR','naam','titel','punt','puntTaxi'];
 const FN={s:storting,t:training,x:taxi,k:sanctie,r:rank};
 const runAll=()=>Object.values(FN).forEach(f=>f());
 const fillSet=()=>{KEYS.forEach(k=>$('c_'+k).value=S[k]);markSet()};
 Object.entries(FN).forEach(([id,f])=>{const g=()=>{TCH[id]=1;f()};$(id).addEventListener('input',g);$(id).addEventListener('change',g)});
 $('c').addEventListener('input',()=>{
-  KEYS.forEach(k=>{const v=$('c_'+k).value;S[k]=k==='rate'?(+v||0):v});
+  KEYS.forEach(k=>{const v=$('c_'+k).value;S[k]=(k==='rate'||k==='tax')?(+v||0):v});
   try{localStorage.setItem('ovb_s',JSON.stringify(S))}catch(e){}markSet();runAll();
 });
 $('c_reset').onclick=()=>{S={...DEF};try{localStorage.removeItem('ovb_s')}catch(e){}fillSet();runAll();toast('Standaardwaarden hersteld')};
@@ -508,7 +578,7 @@ function draw(){HI.unshift([lx,ly]);if(HI.length>N*GAP+1)HI.length=N*GAP+1;els.f
 function bounce(t){
   if(document.documentElement.dataset.anim==='off'){lt=t;requestAnimationFrame(bounce);return}
   const k=Math.min(40,t-lt)/16.67;lt=t;
-  lx+=vx*k;ly+=vy*k;let hit=0;const mw=innerWidth-LW,mh=innerHeight-LH;
+  lx+=vx*k;ly+=vy*k;let hit=0;const mw=innerWidth-(els[0].offsetWidth||LW),mh=innerHeight-(els[0].offsetHeight||LH);
   if(lx<=0){lx=0;vx=Math.abs(vx);hit++}else if(lx>=mw){lx=Math.max(0,mw);vx=-Math.abs(vx);hit++}
   if(ly<=0){ly=0;vy=Math.abs(vy);hit++}else if(ly>=mh){ly=Math.max(0,mh);vy=-Math.abs(vy);hit++}
   if(hit){ci=(ci+1)%PAL.length;dv.style.setProperty('--c',PAL[ci]);
@@ -523,10 +593,10 @@ addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{
 
 addEventListener('load',relayout);addEventListener('resize',relayout);if(window.ResizeObserver)new ResizeObserver(relayout).observe($('nav'));
 document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--cx',e.clientX-r.left+'px');c.style.setProperty('--cy',e.clientY-r.top+'px')}});
-$('t_d').value=$('x_d').value=new Date().toLocaleDateString('sv-SE');
+$('t_d').value=$('x_d').value=$('o_d1').value=new Date().toLocaleDateString('sv-SE');
 // ================= Gegevens (lokaal + synchronisatie) =================
-const VERSION='2.1.1';
-const CHANGES=[['🎨','Nieuw OVB-logo in het panel, de browsertab en de app']];
+const VERSION='2.3.0';
+const CHANGES=[['🧾','9,5% belasting op stortingen (instelbaar)'],['💶','Bedragen met centen, bijvoorbeeld 110.010,55'],['⌨️','Bedragen zelf typen bij Stortingen en handmatig loggen in Overzicht'],['📈','Lijngrafiek in plaats van staafdiagram']];
 const NN={s:'Storting',t:'Training',x:'Taxi-examen',k:'Sanctie',r:'Ranks',p:'Sjabloon'};
 const SKEY={notes:'ovb_notes',stort:'ovb_stort',contacts:'ovb_contacts',settings:'ovb_settings',staff:'ovb_staff',sanc:'ovb_sanc',templates:'ovb_tpl'};
 let NOTES=[],STORT=[],CONT=[],SET=[],STAFF=[],SANC=[],TPL=[],NID=null,ndt=0;
@@ -544,7 +614,7 @@ const CFG={url:'https://bzrarzkcbnyrepafkplv.supabase.co',key:'sb_publishable_l-
 const AUTH_EMAIL='panel@ovb.example.com';
 let sb=null;try{if(window.supabase)sb=window.supabase.createClient(CFG.url,CFG.key)}catch(e){}
 const SYN={on:false,busy:false,warned:false};
-function setSy(st,msg){const e=$('sy');e.className='sy '+st;e.textContent={ok:'☁ Gesynchroniseerd',busy:'⟳ Synchroniseren…',err:'⚠ Offline',off:'☁ Niet verbonden'}[st];e.title=msg||'Nu synchroniseren'}
+function setSy(st,msg){const e=$('sy'),t={ok:['☁','Gesynchroniseerd'],busy:['⟳','Synchroniseren…'],err:['⚠','Offline'],off:['☁','Niet verbonden']}[st];e.className='sy '+st;e.innerHTML='<span>'+t[0]+'</span><span class="sw">'+t[1]+'</span>';e.title=t[1]+(msg?' — '+msg:'');e.setAttribute('aria-label',t[1])}
 async function pushOne(k,o){
   if(!SYN.on)return;
   try{const {error}=await sb.from('store').upsert({id:o.id,kind:k,d:o,u:o.u});setSy(error?'err':'ok',error&&error.message)}catch(e){setSy('err',e.message)}
@@ -672,15 +742,23 @@ function renderCont(){
 function renderLog(){
   const rows=live(STORT).sort((a,b)=>b.t-a.t),wk=weekStart(),mo=new Date(new Date().getFullYear(),new Date().getMonth(),1).getTime();
   let w=0,m=0,a=0;rows.forEach(r=>{a+=r.amt;if(r.t>=wk)w+=r.amt;if(r.t>=mo)m+=r.amt});
-  $('o_w').textContent=fmt(w);$('o_m').textContent=fmt(m);$('o_a').textContent=fmt(a);
-  $('o_l').innerHTML=rows.map(r=>`<div class="lr"><div><b>${fmt(r.amt)}</b> <span>${esc(r.naam||'')}</span><small>${hm(r.min)} · ${new Date(r.t).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'})}</small></div><button class="x" data-ld="${r.id}" title="Verwijderen">✕</button></div>`).join('')||'<div class="empty">Nog geen stortingen gelogd.<br>Gebruik Log bij een stortingsbericht.</div>';
+  $('o_w').textContent=fmt(r2(w));$('o_m').textContent=fmt(r2(m));$('o_a').textContent=fmt(r2(a));
+  $('o_l').innerHTML=rows.map(r=>`<div class="lr"><div><b>${fmt(r.amt)}</b> <span>${esc(r.naam||'')}</span><small>${r.min?hm(r.min)+' · ':''}${new Date(r.t).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'})}</small></div><button class="x" data-ld="${r.id}" title="Verwijderen">✕</button></div>`).join('')||'<div class="empty">Nog geen stortingen gelogd.<br>Gebruik Log bij een stortingsbericht.</div>';
   renderChart();dash();
 }
 $('o_l').onclick=e=>{const b=e.target.closest('[data-ld]');if(!b)return;const r=STORT.find(x=>x.id===b.dataset.ld);if(r){r.x=1;touch('stort',r);renderLog()}};
+$('o_add').onclick=()=>{
+  const a=parseAmt($('o_a1').value);
+  if(!(a>0)){toast('Vul een geldig bedrag in, bijvoorbeeld 110.010,55');return}
+  const [y,m,d]=($('o_d1').value||new Date().toLocaleDateString('sv-SE')).split('-').map(Number);
+  const e={id:nid(),naam:$('o_n1').value.trim()||S.naam||'Zelf',amt:a,min:0,t:new Date(y,m-1,d,12,0).getTime()};
+  STORT.push(e);touch('stort',e);$('o_a1').value='';renderLog();toast('Gelogd in Overzicht');
+};
+$('o_a1').addEventListener('keydown',e=>{if(e.key==='Enter')$('o_add').click()});
 $('o_clr').onclick=()=>{if(!live(STORT).length||!confirm('Alle gelogde stortingen wissen?'))return;live(STORT).forEach(r=>{r.x=1;touch('stort',r)});renderLog()};
 $('o_csv').onclick=()=>{
   const q2=v=>'"'+String(v).replace(/"/g,'""')+'"';
-  const rows=live(STORT).sort((a,b)=>a.t-b.t).map(r=>[new Date(r.t).toLocaleString('nl-NL'),q2(r.naam||''),r.amt,r.min].join(';'));
+  const rows=live(STORT).sort((a,b)=>a.t-b.t).map(r=>[new Date(r.t).toLocaleString('nl-NL'),q2(r.naam||''),r2(r.amt).toFixed(2).replace('.',','),r.min].join(';'));
   dl('stortingen-'+new Date().toLocaleDateString('sv-SE')+'.csv','\uFEFF'+['datum;naam;bedrag;minuten',...rows].join('\n'),'text/csv');
 };
 document.addEventListener('click',e=>{
@@ -798,14 +876,14 @@ function greet(){const h=new Date().getHours();return h<6?'Goedenacht':h<12?'Goe
 function clock(){const d=new Date();$('h_c').textContent=d.toLocaleTimeString('nl-NL',{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('h_d').textContent=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});$('h_g').textContent=greet()}
 function dash(){
   $('h_n').textContent=S.naam?S.naam:'Welkom bij het OVB Panel';
-  const stf=staffStats(),miss=KEYS.filter(empty),all=live(NOTES),last=sortN(all)[0],wk=weekStart(),wsum=live(STORT).filter(r=>r.t>=wk).reduce((a,r)=>a+r.amt,0);
+  const stf=staffStats(),miss=KEYS.filter(empty),all=live(NOTES),last=sortN(all)[0],wk=weekStart(),wsum=r2(live(STORT).filter(r=>r.t>=wk).reduce((a,r)=>a+r.amt,0));
   $('h_st').innerHTML=(miss.length?`<div class="si bad" data-go="c">⚠️ ${miss.length} instelling${miss.length>1?'en':''} nog leeg<span>Instellingen →</span></div>`:'<div class="si ok">✅ Instellingen compleet</div>')
    +`<div class="si" data-go="o">💰 Gestort deze week<span>${fmt(wsum)}</span></div><div class="si" data-go="m">👥 ${stf.n} medewerker${stf.n===1?'':'s'}<span>${stf.w?stf.w+' let op':stf.s+' sancties'}</span></div><div class="si" data-go="n">📝 ${all.length} notitie${all.length===1?'':'s'}<span>${last?esc((last.t||'Naamloos').slice(0,26)):'—'}</span></div>`;
 }
 clock();setInterval(clock,1000);
 
 // ---- Formulieren onthouden + Wissen
-const FORM={s:['s_h','s_m','s_bt'],t:['t_k','t_s','t_dur','t_ts'],x:['x_c','x_rd'],k:['k_t','k_n','k_r'],r:['r_u','r_h','r_d']};
+const FORM={s:['s_h','s_m','s_bt','s_av'],t:['t_k','t_s','t_dur','t_ts'],x:['x_c','x_rd'],k:['k_t','k_n','k_r'],r:['r_u','r_h','r_d']};
 const gv=id=>{const e=$(id);return e.type==='checkbox'?e.checked:e.value};
 const sv2=(id,v)=>{const e=$(id);if(e.type==='checkbox')e.checked=!!v;else if(typeof v==='string')e.value=v};
 const FD={};Object.values(FORM).flat().forEach(id=>FD[id]=gv(id));
@@ -813,14 +891,14 @@ let FS={};try{FS=JSON.parse(localStorage.getItem('ovb_form')||'{}')}catch(e){}
 function fsave(){const o={v:{},sm,xv};Object.values(FORM).flat().forEach(id=>o.v[id]=gv(id));try{localStorage.setItem('ovb_form',JSON.stringify(o))}catch(e){}}
 if(FS.v)Object.entries(FS.v).forEach(([id,v])=>{if($(id))sv2(id,v)});
 if(!$('t_k').value)$('t_k').value=FD.t_k;
-if(FS.sm==='b')$('s_seg').querySelector('[data-v=b]').click();
+if(FS.sm==='b'||FS.sm==='a')$('s_seg').querySelector('[data-v='+FS.sm+']').click();
 if(FS.xv==='z')$('x_seg').querySelector('[data-v=z]').click();
 Object.keys(FORM).forEach(p=>{$(p).addEventListener('input',fsave);$(p).addEventListener('change',fsave)});
 ['s_seg','x_seg'].forEach(id=>$(id).addEventListener('click',fsave));
 document.addEventListener('click',e=>{
   const c=e.target.closest('[data-clear]');
   if(c){const p=c.dataset.clear;FORM[p].forEach(id=>sv2(id,FD[id]));
-    if(p==='s'&&sm==='b')$('s_seg').querySelector('[data-v=m]').click();
+    if(p==='s'&&sm!=='m')$('s_seg').querySelector('[data-v=m]').click();
     if(p==='x'&&xv==='z')$('x_seg').querySelector('[data-v=g]').click();
     TCH[p]=0;FN[p]();fsave();toast('Gewist');return}
   const d=e.target.closest('[data-day]');
@@ -834,7 +912,7 @@ $('c_f').onchange=async e=>{
   const f=e.target.files[0];e.target.value='';if(!f)return;
   try{
     const j=JSON.parse(await f.text());if(j.app!=='ovb-panel')throw 0;
-    if(j.settings)KEYS.forEach(k=>{if(j.settings[k]!==undefined)S[k]=k==='rate'?(+j.settings[k]||0):String(j.settings[k])});
+    if(j.settings)KEYS.forEach(k=>{if(j.settings[k]!==undefined)S[k]=(k==='rate'||k==='tax')?(+j.settings[k]||0):String(j.settings[k])});
     try{localStorage.setItem('ovb_s',JSON.stringify(S))}catch(_){}
     const merge=(kind,arr,fix)=>{if(Array.isArray(arr))arr.forEach(o=>{if(o&&!SMAP[kind]().some(n=>n.id===o.id)){const n=fix(o);SMAP[kind]().push(n);touch(kind,n)}})};
     merge('notes',j.notes,o=>({id:o.id||nid(),t:String(o.t||''),b:String(o.b||''),f:String(o.f||''),p:!!o.p,u:+o.u||Date.now()}));
@@ -867,10 +945,10 @@ const end=()=>{it.classList.add('out');setTimeout(()=>it.remove(),700)};
 if(seen||document.documentElement.dataset.anim==='off')it.remove();else{it.onclick=end;setTimeout(end,1700)}}
 
 // ---- Gedeelde instellingen (uurloon, ID's, verzamelpunten); naam, ID en functie blijven per persoon
-const SHK=['rate','bedrijf','rolS','rolR','punt','puntTaxi'];
+const SHK=['rate','tax','taxMode','bedrijf','rolS','rolR','punt','puntTaxi'];
 function applyShared(){
   const o=live(SET)[0];if(!o)return;let ch=false;
-  SHK.forEach(k=>{if(o[k]!==undefined&&String(S[k])!==String(o[k])){S[k]=k==='rate'?(+o[k]||0):String(o[k]);ch=true}});
+  SHK.forEach(k=>{if(o[k]!==undefined&&String(S[k])!==String(o[k])){S[k]=(k==='rate'||k==='tax')?(+o[k]||0):String(o[k]);ch=true}});
   if(ch){try{localStorage.setItem('ovb_s',JSON.stringify(S))}catch(e){}fillSet();runAll()}
 }
 let spt=0;
@@ -1023,18 +1101,33 @@ $('p_ex').onclick=()=>{
   tplList();toast(n?n+' voorbeeldsjablonen toegevoegd':'De voorbeelden staan er al');
 };
 
-// ---- Grafiek stortingen
+// ---- Grafiek stortingen (lijngrafiek)
 let chartMode='w';
-const shortAmt=v=>v>=1e6?(v/1e6).toFixed(1).replace('.0','')+'M':v>=1e3?Math.round(v/1e3)+'K':String(v);
+const shortAmt=v=>v>=1e6?(v/1e6).toFixed(1).replace('.0','')+'M':v>=1e3?(v/1e3).toFixed(v>=1e4?0:1).replace('.0','')+'K':String(Math.round(v));
+const niceMax=v=>{const p=Math.pow(10,Math.floor(Math.log10(v))),f=v/p;return(f<=1?1:f<=2?2:f<=5?5:10)*p};
+function smooth(pts,top,base){
+  let d='M'+pts[0][0].toFixed(1)+' '+pts[0][1].toFixed(1);const cl=y=>Math.min(base,Math.max(top,y)).toFixed(1);
+  for(let i=0;i<pts.length-1;i++){
+    const p0=pts[i-1]||pts[i],p1=pts[i],p2=pts[i+1],p3=pts[i+2]||p2,t=.18;
+    d+=` C${(p1[0]+(p2[0]-p0[0])*t).toFixed(1)} ${cl(p1[1]+(p2[1]-p0[1])*t)} ${(p2[0]-(p3[0]-p1[0])*t).toFixed(1)} ${cl(p2[1]-(p3[1]-p1[1])*t)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+  }
+  return d;
+}
 function renderChart(){
   const rows=live(STORT),now=new Date(),bk=[];
   if(chartMode==='w'){const ws=new Date(weekStart());for(let i=7;i>=0;i--){const s=new Date(ws);s.setDate(s.getDate()-7*i);const e=new Date(s);e.setDate(e.getDate()+7);bk.push({s:s.getTime(),e:e.getTime(),l:s.getDate()+'/'+(s.getMonth()+1)})}}
   else for(let i=5;i>=0;i--){const s=new Date(now.getFullYear(),now.getMonth()-i,1),e=new Date(now.getFullYear(),now.getMonth()-i+1,1);bk.push({s:s.getTime(),e:e.getTime(),l:s.toLocaleDateString('nl-NL',{month:'short'})})}
-  bk.forEach(b=>{b.v=rows.filter(r=>r.t>=b.s&&r.t<b.e).reduce((a,r)=>a+r.amt,0)});
-  const max=Math.max(1,...bk.map(b=>b.v)),W=320,H=130,n=bk.length,bw=Math.min(30,(W-20)/n-8),gap=(W-n*bw)/(n+1);
-  $('o_ch').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Stortingen per ${chartMode==='w'?'week':'maand'}">`+bk.map((b,i)=>{
-    const h=Math.max(b.v?3:0,(b.v/max)*(H-44)),x=gap+i*(bw+gap),y=H-22-h;
-    return `<g><rect class="bar" style="animation-delay:${i*60}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="5"><title>${esc(b.l)}: ${fmt(b.v)}</title></rect><text x="${x+bw/2}" y="${H-7}" text-anchor="middle" class="bl">${esc(b.l)}</text>${b.v?`<text x="${x+bw/2}" y="${y-4}" text-anchor="middle" class="bv">${shortAmt(b.v)}</text>`:''}</g>`}).join('')+'</svg>';
+  bk.forEach(b=>{b.v=r2(rows.filter(r=>r.t>=b.s&&r.t<b.e).reduce((a,r)=>a+r.amt,0))});
+  const W=320,H=150,L=36,R=12,T=14,B=26,pw=W-L-R,ph=H-T-B,mx=Math.max(...bk.map(b=>b.v)),nm=mx>0?niceMax(mx):1;
+  const xs=i=>L+i*pw/(bk.length-1),ys=v=>T+ph-(v/nm)*ph,pts=bk.map((b,i)=>[xs(i),ys(b.v)]),base=T+ph;
+  const line=smooth(pts,T,base),area=line+` L${xs(bk.length-1).toFixed(1)} ${base} L${xs(0).toFixed(1)} ${base} Z`;
+  const imax=bk.findIndex(b=>b.v===mx),show2=new Set([bk.length-1,imax]);
+  $('o_ch').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Stortingen per ${chartMode==='w'?'week':'maand'}"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--am);stop-opacity:.45"/><stop offset="1" style="stop-color:var(--am);stop-opacity:0"/></linearGradient></defs>`
+   +[0,1,2,3,4].map(k=>{const y=T+ph-ph*k/4;return `<line class="gl" x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text class="gy" x="${L-5}" y="${y+3}" text-anchor="end">${shortAmt(nm*k/4)}</text>`}).join('')
+   +(mx>0?`<path class="cg-area" d="${area}" fill="url(#cg)"/><path class="cg-line" pathLength="1" d="${line}"/>`:`<text x="${W/2}" y="${T+ph/2}" text-anchor="middle" class="gy" style="font-size:10px">Nog geen stortingen in deze periode</text>`)
+   +bk.map((b,i)=>`<text class="gy" x="${xs(i)}" y="${H-8}" text-anchor="middle">${esc(b.l)}</text>`).join('')
+   +(mx>0?bk.map((b,i)=>`<circle class="pt" style="animation-delay:${400+i*70}ms" cx="${xs(i).toFixed(1)}" cy="${ys(b.v).toFixed(1)}" r="3.5"><title>${esc(b.l)}: ${fmt(b.v)}</title></circle>${b.v&&show2.has(i)?`<text class="gy" style="fill:var(--tx);font-weight:700" x="${xs(i).toFixed(1)}" y="${(ys(b.v)-8).toFixed(1)}" text-anchor="middle">${shortAmt(b.v)}</text>`:''}`).join(''):'')
+   +'</svg>';
 }
 seg('o_seg',v=>{chartMode=v;renderChart()});
 
@@ -1042,5 +1135,13 @@ seg('o_seg',v=>{chartMode=v;renderChart()});
 setSy('off');renderHist();renderCont();renderLog();renderStaff();tplList();tplLoad('');nsel(pickN());applyUI(false);
 
 document.querySelectorAll('.seg').forEach(sg=>sg.insertAdjacentHTML('afterbegin','<i class="th"></i>'));
-fillSet();runAll();go('h');
+fillSet();runAll();{const g=$('sheet_g');g.innerHTML=[...document.querySelectorAll('#nav button')].map(b=>`<button data-t="${b.dataset.t}">${b.innerHTML}</button>`).join('');
+const sh=v=>$('sheet').classList.toggle('on',v);
+$('m_more').onclick=()=>sh(true);$('sheet').onclick=e=>{if(e.target===$('sheet'))sh(false)};
+g.onclick=e=>{const b=e.target.closest('[data-t]');if(b){go(b.dataset.t);sh(false)}};
+$('mnav').onclick=e=>{const b=e.target.closest('[data-t]');if(b)go(b.dataset.t)};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')sh(false)});
+addEventListener('popstate',()=>{const h=location.hash.slice(1);go(ORDER.includes(h)?h:'h',true);sh(false)});
+document.addEventListener('click',e=>{const sp=e.target.closest('.sp');if(sp)sp.classList.toggle('show')});}
+go(ORDER.includes(location.hash.slice(1))?location.hash.slice(1):'h',true);
 </script></body></html>

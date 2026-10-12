@@ -1,6 +1,9 @@
 {
-  "version": "2.1.1",
+  "version": "2.3.0",
   "changes": [
-    ["🎨", "Nieuw OVB-logo in het panel, de browsertab en de app"]
+    ["🧾", "9,5% belasting op stortingen (instelbaar)"],
+    ["💶", "Bedragen met centen, bijvoorbeeld 110.010,55"],
+    ["⌨️", "Bedragen zelf typen bij Stortingen en handmatig loggen in Overzicht"],
+    ["📈", "Lijngrafiek in plaats van staafdiagram"]
   ]
 }
