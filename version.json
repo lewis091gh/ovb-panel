@@ -1,9 +1,10 @@
 {
-  "version": "2.3.0",
+  "version": "2.4.0",
   "changes": [
-    ["🧾", "9,5% belasting op stortingen (instelbaar)"],
-    ["💶", "Bedragen met centen, bijvoorbeeld 110.010,55"],
-    ["⌨️", "Bedragen zelf typen bij Stortingen en handmatig loggen in Overzicht"],
-    ["📈", "Lijngrafiek in plaats van staafdiagram"]
+    ["🏦", "Een storting is het saldo: de grafiek volgt het laatst gelogde bedrag"],
+    ["🧾", "Belasting alleen in het saldo en de grafiek, niet in het bericht"],
+    ["⚡", "Saldo wordt automatisch gelogd als je het bericht kopieert"],
+    ["☁️", "Geschiedenis en stortingen worden direct gesynchroniseerd"],
+    ["📱", "Telefoon: menubalk onderaan staat nu altijd vast en de pagina scrolt niet meer te ver"]
   ]
 }

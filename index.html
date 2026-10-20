@@ -24,7 +24,7 @@ body{margin:0;min-height:100vh;color:var(--tx);font:15px/1.5 system-ui,-apple-sy
 .lg b{display:block;width:100%;height:100%;background:var(--c);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;transition:background .4s}
 .lg.mn{z-index:2;opacity:.6;filter:drop-shadow(0 0 12px var(--c))}
 .lg.mn.hit{animation:hit .9s}@keyframes hit{50%{filter:drop-shadow(0 0 50px #fff) brightness(2)}}
-.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:18px 24px 36px;animation:fi .8s ease both}
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:18px 24px 36px;animation:fi .8s ease}
 @keyframes fi{from{opacity:0;transform:translateY(-10px)}}
 .top{display:flex;align-items:center;justify-content:space-between;gap:14px 24px;flex-wrap:wrap;margin-bottom:16px}
 .blogo{flex:none;width:130px;height:32px;cursor:pointer;background:linear-gradient(90deg,var(--am),var(--or));-webkit-mask:var(--m) left center/contain no-repeat;mask:var(--m) left center/contain no-repeat;transition:filter .3s,transform .3s}
@@ -197,7 +197,7 @@ button,.tile,.ni,.er,.si,.hr{touch-action:manipulation}
   #mnav button span{font-size:20px;line-height:1;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}#mnav button.on{color:#1d0d00;background:linear-gradient(135deg,var(--am),var(--or))}#mnav button.on span{transform:scale(1.15)}
   #sheet{display:block;position:fixed;inset:0;z-index:60;background:rgba(6,3,16,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}#sheet.on{opacity:1;visibility:visible}
   .sh{position:absolute;left:0;right:0;bottom:0;max-height:82vh;max-height:82dvh;overflow:auto;border-radius:24px 24px 0 0;padding:10px 16px calc(26px + env(safe-area-inset-bottom));background:var(--c1);border-top:1px solid var(--bd);transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.9,.3,1.1)}#sheet.on .sh{transform:none}
-  .grab{width:44px;height:5px;border-radius:5px;background:var(--bd);margin:0 auto 14px}#sheet_g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .grab{width:44px;height:5px;border-radius:5px;background:var(--bd);margin:0 auto 14px}#sheet_g{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}#sheet_g button{padding:12px 4px;font-size:12.5px}#sheet_g button .ic{font-size:24px}
   #toast{bottom:calc(92px + env(safe-area-inset-bottom));max-width:calc(100vw - 32px);text-align:center}
   input,select,textarea{font-size:16px}
   .row{flex-wrap:wrap}.row>*{min-width:130px}
@@ -208,13 +208,16 @@ button,.tile,.ni,.er,.si,.hr{touch-action:manipulation}
   .lg,.lr,.hr{min-width:0}
 }
 @media(max-width:560px){.sg{grid-template-columns:1fr}.themes{grid-template-columns:repeat(2,1fr)}.eg{grid-template-columns:repeat(6,1fr)}.sums b{font-size:15px}.tiles{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:380px){.tiles{grid-template-columns:repeat(2,1fr)}#sheet_g{grid-template-columns:repeat(2,1fr)}.wrap{padding-left:8px;padding-right:8px}}
+@media(max-width:380px){.tiles{grid-template-columns:repeat(2,1fr)}.wrap{padding-left:8px;padding-right:8px}}
 @media(max-height:520px) and (orientation:landscape){#mnav button span{font-size:16px}#mnav button{flex-direction:row;justify-content:center;gap:6px;padding:6px}}
 .stat small{display:block;margin-top:6px;font-weight:500;letter-spacing:0;font-size:12px;color:var(--mut)}.stat small:empty{display:none}
 .cg-line{fill:none;stroke:var(--am);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;animation:draw 1.3s ease both}@keyframes draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
 .cg-area{animation:fadein .9s .5s both}@keyframes fadein{from{opacity:0}}
 .pt{fill:var(--c1);stroke:var(--am);stroke-width:2;cursor:pointer;transition:r .2s;animation:fadein .5s both}.pt:hover{r:6}.gl{stroke:var(--bd);stroke-width:1;stroke-dasharray:3 4}.gy{fill:var(--mut);font-size:8.5px}
 details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color:var(--at)}
+.pt{display:none}
+@media(max-width:700px){.pt{display:block;flex:1;min-width:0;text-align:center;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.sums b.up{color:#34d399}.sums b.dn{color:#ff8fa3}
 </style></head><body data-vm="p">
 <div id="lock"><div class="card" style="width:100%;max-width:380px;text-align:center"><div class="blogo" style="margin:0 auto 20px;width:160px;height:39px;cursor:default"></div>
 <form id="lf"><label style="text-align:left">Wachtwoord</label><input id="lp" type="password" required autocomplete="current-password" autofocus><div id="le"></div><button class="btn" id="lb" type="submit" style="margin:0">Inloggen</button></form></div></div>
@@ -223,7 +226,7 @@ details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color
 <div class="bg"><div class="cur"></div><div id="stars"></div></div>
 <div id="dvd"></div>
 <div class="wrap">
-<header class="top"><div class="blogo"></div>
+<header class="top"><div class="blogo"></div><div class="pt" id="pt"></div>
 <nav class="dock" id="nav"><span class="ind"></span><button data-t="h"><span class="ic">🏠</span> Home</button>
 <button data-t="s"><span class="ic">💰</span> Stortingen</button><button data-t="t"><span class="ic">🚌</span> Trainingen</button><button data-t="x"><span class="ic">🚕</span> Taxi-examen</button><button data-t="k"><span class="ic">⚠️</span> Sancties</button><button data-t="r"><span class="ic">✨</span> Ranks</button><button data-t="p"><span class="ic">🧩</span> Sjablonen</button><button data-t="m"><span class="ic">👥</span> Medewerkers</button><button data-t="o"><span class="ic">📊</span> Overzicht</button><button data-t="n"><span class="ic">📝</span> Notepad</button><button data-t="c"><span class="ic">⚙️</span> Instellingen</button></nav><div class="tools"><button class="sy" id="sy" title="Nu synchroniseren">☁</button><button class="ico" id="out" title="Uitloggen">⎋</button></div></header>
 <main>
@@ -241,7 +244,7 @@ details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color
 <div class="stat"><span id="s_rl"></span><b id="s_amt">€ 0,00</b><small id="s_tx"></small></div></div>
 <div id="s_amtm" class="hide"><label>Bedrag (€)</label><input id="s_av" inputmode="decimal" autocomplete="off" placeholder="Bijvoorbeeld 110.010,55"><div class="stat"><span>Bedrag in het bericht</span><b id="s_ab">€ 0,00</b></div></div>
 <div id="s_bulk" class="hide"><label>Plak de lijst</label><textarea id="s_bt" rows="8" placeholder="1 - &lt;@123456789&gt; - 123456789 - 5 shifts - 9474532ms - 2 hours, 37 minutes, 55 seconds"></textarea>
-<div class="stat">Totaal (afgerond per persoon)<b id="s_bsum">€ 0</b></div></div><button class="btn ghost" data-clear="s">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Vul uren en minuten in: het bedrag volgt uit het uurloon bij Instellingen, minus de belasting (standaard 9,5%, aan te passen). Met Bedrag typen vul je zelf een bedrag in, bijvoorbeeld 110.010,55; dat wordt zonder belasting overgenomen. Bij Lijst plakken geef je een lijst met mensen en tijden; iedereen krijgt een eigen bericht en meer dan 30 seconden telt als 1 minuut erbij.</p></details></div>
+<div class="stat">Totaal in de berichten<b id="s_bsum">€ 0,00</b></div></div><label class="chk"><input type="checkbox" id="s_al" checked> Saldo automatisch loggen als ik het bericht kopieer</label><button class="btn ghost" data-clear="s">Wissen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Het bericht bevat het bedrag uit je uren en het uurloon, zonder belasting: de medewerker die de storting behandelt rekent zelf uit wat er overblijft. Een storting betekent hoeveel geld jullie hebben. Bij Log (of automatisch bij kopiëren) wordt dat het nieuwe saldo, dus het wordt niet opgeteld. In het saldo en de grafiek rekent het panel wel met de belasting (standaard 9,5%, aan te passen bij Instellingen). Bij Lijst plakken krijgt iedereen een eigen bericht en meer dan 30 seconden telt als 1 minuut erbij. Met Bedrag typen vul je zelf een bedrag in, bijvoorbeeld 110.010,55, dat zonder belasting wordt overgenomen.</p></details></div>
 <div class="card"><div class="out" id="s_o"></div></div></section>
 
 <section class="panel" id="t">
@@ -291,12 +294,12 @@ details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color
 </section>
 
 <section class="panel" id="o">
-<div class="card"><div class="sums"><div>Deze week<b id="o_w">€ 0</b></div><div>Deze maand<b id="o_m">€ 0</b></div><div>Totaal<b id="o_a">€ 0</b></div></div>
-<div class="seg" id="o_seg" style="margin-top:14px"><button data-v="w" class="on">Per week</button><button data-v="m">Per maand</button></div><div class="chart" id="o_ch"></div>
-<details class="help add"><summary>＋ Bedrag handmatig loggen</summary><div class="row" style="margin-top:10px"><input id="o_a1" inputmode="decimal" autocomplete="off" placeholder="Bedrag, bijv. 110.010,55"><input id="o_n1" placeholder="Naam (optioneel)"></div><div class="row" style="margin-top:8px"><input id="o_d1" type="date"><button class="btn" id="o_add" style="margin:0;padding:10px">Loggen</button></div></details>
-<label>Stortingen</label><div class="ll" id="o_l"></div>
+<div class="card"><div class="sums"><div>Saldo<b id="o_a">€ 0,00</b></div><div>Deze week<b id="o_w">—</b></div><div>Deze maand<b id="o_m">—</b></div></div>
+<div class="seg" id="o_seg" style="margin-top:14px"><button data-v="d">Dag</button><button data-v="w" class="on">Week</button><button data-v="m">Maand</button></div><div class="chart" id="o_ch"></div>
+<details class="help add"><summary>＋ Saldo handmatig loggen</summary><div class="row" style="margin-top:10px"><input id="o_a1" inputmode="decimal" autocomplete="off" placeholder="Saldo, bijv. 110.010,55"><input id="o_n1" placeholder="Naam (optioneel)"></div><div class="row" style="margin-top:8px"><input id="o_d1" type="date"><button class="btn" id="o_add" style="margin:0;padding:10px">Loggen</button></div></details>
+<label>Gelogde stortingen</label><div class="ll" id="o_l"></div>
 <div class="nt"><button class="btn ghost" id="o_csv">⬇ CSV</button><button class="btn ghost danger" id="o_clr">Alles wissen</button></div>
-<details class="help"><summary>ⓘ Uitleg</summary><p>Stortingen die je bij Stortingen met Log vastlegt, komen hier met totalen per week en maand. Je kunt ze exporteren naar CSV. Rechts staan je laatst gekopieerde berichten, zodat je ze opnieuw kunt gebruiken.</p></details></div>
+<details class="help"><summary>ⓘ Uitleg</summary><p>Het saldo is het laatst gelogde bedrag: een nieuwe storting vervangt het saldo. De grafiek laat zien hoe het saldo zich per dag, week of maand ontwikkelt en blijft op hetzelfde bedrag tot er een nieuwe storting komt. Rechts staan de laatst gekopieerde berichten, gedeeld met iedereen die inlogt.</p></details></div>
 <div class="card"><div class="row" style="align-items:center"><label style="margin:0;flex:1">Recent gekopieerd</label><button class="cp" id="o_hc">Wis</button></div><div class="hl" id="o_h"></div></div>
 </section>
 
@@ -315,7 +318,7 @@ details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color
 </section>
 
 <section class="panel" id="c">
-<div class="card"><div class="sg"><div><label>Verdienste per uur (€)<i class="tg">gedeeld</i></label><input id="c_rate" type="number" min="0"></div><div><label>Belasting (%)<i class="tg">gedeeld</i></label><input id="c_tax" type="number" min="0" max="100" step="0.1"></div><div><label>Belasting verwerken<i class="tg">gedeeld</i></label><select id="c_taxMode"><option value="min">Aftrekken van het bedrag</option><option value="plus">Erbij optellen</option></select></div><div><label>Bedrijfsnaam (stortingen)<i class="tg">gedeeld</i></label><input id="c_bedrijf"></div><div><label>Jouw Discord-ID<i class="tg me">alleen jij</i></label><input id="c_me" placeholder="Vul hier je eigen Discord-ID in"></div><div><label>Jouw naam (handtekening)<i class="tg me">alleen jij</i></label><input id="c_naam" placeholder="Vul hier je eigen naam in"></div><div><label>Functie<i class="tg me">alleen jij</i></label><input id="c_titel" placeholder="Vul hier je functie in"></div><div><label>Rol-ID storting<i class="tg">gedeeld</i></label><input id="c_rolS"></div><div><label>Rol-ID ranks<i class="tg">gedeeld</i></label><input id="c_rolR"></div><div><label>Verzamelpunt Bus-training<i class="tg">gedeeld</i></label><input id="c_punt"></div><div><label>Verzamelpunt Taxi-training<i class="tg">gedeeld</i></label><input id="c_puntTaxi"></div></div><button class="btn alt" id="c_reset">Standaardwaarden herstellen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Gedeelde instellingen gelden voor iedereen die inlogt. Je Discord-ID, naam en functie blijven alleen op dit apparaat. Zonder je Discord-ID, naam en functie kun je niet alle berichten maken. Thema, accentkleur en animaties gelden alleen voor dit apparaat.</p></details></div>
+<div class="card"><div class="sg"><div><label>Verdienste per uur (€)<i class="tg">gedeeld</i></label><input id="c_rate" type="number" min="0"></div><div><label>Belasting (%)<i class="tg">gedeeld</i></label><input id="c_tax" type="number" min="0" max="100" step="0.1"></div><div><label>Belasting in saldo en grafiek<i class="tg">gedeeld</i></label><select id="c_taxMode"><option value="min">Aftrekken van het bedrag</option><option value="plus">Erbij optellen</option></select></div><div><label>Bedrijfsnaam (stortingen)<i class="tg">gedeeld</i></label><input id="c_bedrijf"></div><div><label>Jouw Discord-ID<i class="tg me">alleen jij</i></label><input id="c_me" placeholder="Vul hier je eigen Discord-ID in"></div><div><label>Jouw naam (handtekening)<i class="tg me">alleen jij</i></label><input id="c_naam" placeholder="Vul hier je eigen naam in"></div><div><label>Functie<i class="tg me">alleen jij</i></label><input id="c_titel" placeholder="Vul hier je functie in"></div><div><label>Rol-ID storting<i class="tg">gedeeld</i></label><input id="c_rolS"></div><div><label>Rol-ID ranks<i class="tg">gedeeld</i></label><input id="c_rolR"></div><div><label>Verzamelpunt Bus-training<i class="tg">gedeeld</i></label><input id="c_punt"></div><div><label>Verzamelpunt Taxi-training<i class="tg">gedeeld</i></label><input id="c_puntTaxi"></div></div><button class="btn alt" id="c_reset">Standaardwaarden herstellen</button><details class="help"><summary>ⓘ Uitleg</summary><p>Gedeelde instellingen gelden voor iedereen die inlogt. Je Discord-ID, naam en functie blijven alleen op dit apparaat. Zonder je Discord-ID, naam en functie kun je niet alle berichten maken. Thema, accentkleur en animaties gelden alleen voor dit apparaat.</p></details></div>
 <div class="card"><label style="margin-top:0">Thema</label><div class="themes" id="c_th"><button data-th="nacht"><i style="--a:#8b5cf6;--b:#090612"></i>Nacht</button><button data-th="licht"><i style="--a:#ffffff;--b:#c9bff5"></i>Licht</button><button data-th="ovb"><i style="--a:#3b82f6;--b:#06101f"></i>OVB</button><button data-th="bus"><i style="--a:#ffcc00;--b:#24272c"></i>Bus</button></div>
 <label>Accentkleur</label><div class="sw" id="c_ac"><button data-ac="" style="--c:transparent" title="Standaard van het thema">⟲</button><button data-ac="#ffc233,#ff8a3d" style="--c:#ffc233" title="Amber"></button><button data-ac="#ff6bb5,#ff3c7a" style="--c:#ff6bb5" title="Roze"></button><button data-ac="#2bd2ff,#2b8cff" style="--c:#2bd2ff" title="Cyaan"></button><button data-ac="#34d399,#10b981" style="--c:#34d399" title="Groen"></button><button data-ac="#a78bfa,#8b5cf6" style="--c:#a78bfa" title="Paars"></button><input type="color" id="c_acc" title="Eigen kleur" value="#ffc233"></div>
 <label class="chk"><input type="checkbox" id="c_an" checked> Animaties aan</label>
@@ -323,7 +326,8 @@ details.add{border-top:0;padding-top:0;margin-top:12px}details.add summary{color
 <label>Backup</label><div class="nt"><button class="btn ghost" id="c_exp">⬇ Alles exporteren</button><button class="btn ghost" id="c_imp">⬆ Alles importeren</button></div><input type="file" id="c_f" class="hide" accept=".json,application/json">
 <div class="ver"><span>Versie <b id="c_v"></b></span><button class="btn ghost" id="c_new" style="width:auto;margin:0;padding:8px 14px">Wat is nieuw</button></div></div>
 </section>
-</main><nav id="mnav"><button data-t="h"><span>🏠</span>Home</button><button data-t="s"><span>💰</span>Storting</button><button data-t="t"><span>🚌</span>Training</button><button data-t="n"><span>📝</span>Notities</button><button id="m_more"><span>☰</span>Meer</button></nav>
+</main></div>
+<nav id="mnav"><button data-t="h"><span>🏠</span>Home</button><button data-t="s"><span>💰</span>Storting</button><button data-t="t"><span>🚌</span>Training</button><button data-t="n"><span>📝</span>Notities</button><button id="m_more"><span>☰</span>Meer</button></nav>
 <div id="sheet"><div class="sh"><div class="grab"></div><div id="sheet_g"></div></div></div>
 <div id="toast"></div>
 <script>
@@ -355,6 +359,7 @@ function go(id,np){
   document.querySelectorAll('#nav button,#mnav [data-t],#sheet_g button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));
   const mm=$('m_more');if(mm)mm.classList.toggle('on',!['h','s','t','n'].includes(id));
   if(!np&&location.hash.slice(1)!==id){try{history.pushState(null,'','#'+id)}catch(e){}}
+  const pb=document.querySelector('#nav button[data-t="'+id+'"]');if($('pt'))$('pt').textContent=pb?pb.textContent.trim():'';
   window.scrollTo(0,0);relayout();
 }
 $('nav').onclick=e=>{const b=e.target.closest('button');if(b)go(b.dataset.t)};
@@ -417,7 +422,7 @@ document.addEventListener('click',async e=>{
   if(so){const x=so._a[+sv.dataset.s];if(x){nadd((NN[so.id[0]]||'Bericht')+' '+new Date().toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'}),x.txt);toast('Bewaard in Notepad')}return}
   const cb=e.target.closest('[data-c]'),c=cb&&cb.closest('.out');if(!c)return;
   const list=cb.dataset.c==='all'?c._a:[c._a[+cb.dataset.c]];
-  await copy(list.map(x=>x.txt).join('\n\n'));list.forEach(x=>addHist(x.txt,NN[c.id[0]]||'Bericht'));
+  await copy(list.map(x=>x.txt).join('\n\n'));list.forEach(x=>addHist(x.txt,NN[c.id[0]]||'Bericht'));autoLogCopy(c,list);
   const o=cb.textContent;cb.textContent='✓ Gekopieerd';cb.classList.add('done');toast('Gekopieerd naar klembord');
   setTimeout(()=>{cb.textContent=o;cb.classList.remove('done')},1600);
 });
@@ -447,13 +452,13 @@ function parseLine(l){
 }
 function storting(){
   const tp=taxPct(),sg=S.taxMode==='plus'?'+':'−';
-  $('s_rl').textContent='Bedrag ('+(+S.rate||0).toLocaleString('nl-NL')+' per uur'+(tp?', '+sg+tp.toLocaleString('nl-NL')+'% belasting':'')+')';
+  $('s_rl').textContent='Bedrag in het bericht ('+(+S.rate||0).toLocaleString('nl-NL')+' per uur)';
   if(sm==='m'){
     const min=(+$('s_h').value||0)*60+(+$('s_m').value||0),c=calc(min);
-    countTo('s_amt',c.net);
-    $('s_tx').textContent=tp?'Bruto '+fmt(c.gross)+' '+sg+' belasting '+fmt(c.tax):'';
+    countTo('s_amt',c.gross);
+    $('s_tx').textContent=tp?'In het saldo en de grafiek na '+tp.toLocaleString('nl-NL')+'% belasting: '+fmt(c.net):'';
     if(need('s_o',['rate','bedrijf','rolS','me']))return;if(check('s','s_o',[['s_h,s_m',!(min>0),'Vul uren of minuten in.']]))return;
-    show('s_o',[{label:hm(min),txt:msg(ME(),c.net),lg:{naam:S.naam||'Zelf',amt:c.net,min,bruto:c.gross,tax:c.tax}}]);
+    show('s_o',[{label:hm(min),txt:msg(ME(),c.gross),lg:{naam:S.naam||'Zelf',amt:c.net,min,bruto:c.gross,tax:c.tax}}]);
   }else if(sm==='a'){
     const a=parseAmt($('s_av').value);
     countTo('s_ab',isNaN(a)?0:a);
@@ -462,8 +467,8 @@ function storting(){
     show('s_o',[{label:'Bedrag getypt',txt:msg(ME(),a),lg:{naam:S.naam||'Zelf',amt:a,min:0}}]);
   }else{
     const rows=$('s_bt').value.split('\n').map(l=>l.trim()).filter(Boolean).map(parseLine).filter(Boolean);
-    countTo('s_bsum',r2(rows.reduce((a,r)=>a+r.amt,0)));if(need('s_o',['rate','bedrijf','rolS']))return;{const n=$('s_bt').value.split('\n').filter(l=>l.trim()).length;if(check('s','s_o',[['s_bt',!n,'Plak eerst je lijst.'],['s_bt',n&&!rows.length,'Geen geldige regels gevonden. Elke regel heeft een @mention en een tijd nodig.']]))return}
-    show('s_o',rows.map(r=>({label:hm(r.min)+' (afgerond)',txt:msg('<@'+r.id+'>',r.amt),lg:{naam:nameOf(r.id),amt:r.amt,min:r.min,bruto:r.bruto,tax:r.tax}})));
+    countTo('s_bsum',r2(rows.reduce((a,r)=>a+r.bruto,0)));if(need('s_o',['rate','bedrijf','rolS']))return;{const n=$('s_bt').value.split('\n').filter(l=>l.trim()).length;if(check('s','s_o',[['s_bt',!n,'Plak eerst je lijst.'],['s_bt',n&&!rows.length,'Geen geldige regels gevonden. Elke regel heeft een @mention en een tijd nodig.']]))return}
+    show('s_o',rows.map(r=>({label:hm(r.min)+' (afgerond)',txt:msg('<@'+r.id+'>',r.bruto),lg:{naam:nameOf(r.id),amt:r.amt,min:r.min,bruto:r.bruto,tax:r.tax}})));
   }
 }
 seg('s_seg',v=>{sm=v;$('s_man').classList.toggle('hide',v!=='m');$('s_bulk').classList.toggle('hide',v!=='b');$('s_amtm').classList.toggle('hide',v!=='a');storting()});
@@ -595,13 +600,13 @@ addEventListener('load',relayout);addEventListener('resize',relayout);if(window.
 document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--cx',e.clientX-r.left+'px');c.style.setProperty('--cy',e.clientY-r.top+'px')}});
 $('t_d').value=$('x_d').value=$('o_d1').value=new Date().toLocaleDateString('sv-SE');
 // ================= Gegevens (lokaal + synchronisatie) =================
-const VERSION='2.3.0';
-const CHANGES=[['🧾','9,5% belasting op stortingen (instelbaar)'],['💶','Bedragen met centen, bijvoorbeeld 110.010,55'],['⌨️','Bedragen zelf typen bij Stortingen en handmatig loggen in Overzicht'],['📈','Lijngrafiek in plaats van staafdiagram']];
+const VERSION='2.4.0';
+const CHANGES=[['🏦','Een storting is het saldo: de grafiek volgt het laatst gelogde bedrag'],['🧾','Belasting alleen in het saldo en de grafiek, niet in het bericht'],['⚡','Saldo wordt automatisch gelogd als je het bericht kopieert'],['☁️','Geschiedenis en stortingen worden direct gesynchroniseerd'],['📱','Telefoon: menubalk onderaan staat nu altijd vast en de pagina scrolt niet meer te ver']];
 const NN={s:'Storting',t:'Training',x:'Taxi-examen',k:'Sanctie',r:'Ranks',p:'Sjabloon'};
-const SKEY={notes:'ovb_notes',stort:'ovb_stort',contacts:'ovb_contacts',settings:'ovb_settings',staff:'ovb_staff',sanc:'ovb_sanc',templates:'ovb_tpl'};
-let NOTES=[],STORT=[],CONT=[],SET=[],STAFF=[],SANC=[],TPL=[],NID=null,ndt=0;
-const SMAP={notes:()=>NOTES,stort:()=>STORT,contacts:()=>CONT,settings:()=>SET,staff:()=>STAFF,sanc:()=>SANC,templates:()=>TPL};
-const SSET={notes:a=>{NOTES=a},stort:a=>{STORT=a},contacts:a=>{CONT=a},settings:a=>{SET=a},staff:a=>{STAFF=a},sanc:a=>{SANC=a},templates:a=>{TPL=a}};
+const SKEY={notes:'ovb_notes',stort:'ovb_stort',contacts:'ovb_contacts',hist:'ovb_hist',settings:'ovb_settings',staff:'ovb_staff',sanc:'ovb_sanc',templates:'ovb_tpl'};
+let NOTES=[],STORT=[],CONT=[],HIST=[],SET=[],STAFF=[],SANC=[],TPL=[],NID=null,ndt=0;
+const SMAP={notes:()=>NOTES,stort:()=>STORT,contacts:()=>CONT,hist:()=>HIST,settings:()=>SET,staff:()=>STAFF,sanc:()=>SANC,templates:()=>TPL};
+const SSET={notes:a=>{NOTES=a},stort:a=>{STORT=a},contacts:a=>{CONT=a},hist:a=>{HIST=a},settings:a=>{SET=a},staff:a=>{STAFF=a},sanc:a=>{SANC=a},templates:a=>{TPL=a}};
 for(const k in SKEY){try{const a=JSON.parse(localStorage.getItem(SKEY[k])||'[]');if(Array.isArray(a))SSET[k](a)}catch(e){}}
 const live=a=>a.filter(o=>!o.x);
 const nid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -617,8 +622,9 @@ const SYN={on:false,busy:false,warned:false};
 function setSy(st,msg){const e=$('sy'),t={ok:['☁','Gesynchroniseerd'],busy:['⟳','Synchroniseren…'],err:['⚠','Offline'],off:['☁','Niet verbonden']}[st];e.className='sy '+st;e.innerHTML='<span>'+t[0]+'</span><span class="sw">'+t[1]+'</span>';e.title=t[1]+(msg?' — '+msg:'');e.setAttribute('aria-label',t[1])}
 async function pushOne(k,o){
   if(!SYN.on)return;
-  try{const {error}=await sb.from('store').upsert({id:o.id,kind:k,d:o,u:o.u});setSy(error?'err':'ok',error&&error.message)}catch(e){setSy('err',e.message)}
+  try{const {error}=await sb.from('store').upsert({id:o.id,kind:k,d:o,u:o.u});setSy(error?'err':'ok',error&&error.message);if(error&&!SYN.warned){SYN.warned=true;toast('Opslaan in de database mislukt: '+error.message)}}catch(e){setSy('err',e.message)}
 }
+let sst=0;function syncSoon(){clearTimeout(sst);sst=setTimeout(()=>{if(SYN.on)syncAll()},1500)}
 function touch(k,o){o.u=Date.now();const ok=saveK(k);pushOne(k,o);return ok}
 async function syncAll(){
   if(!sb||!SYN.on||SYN.busy)return;SYN.busy=true;setSy('busy');
@@ -642,7 +648,7 @@ async function syncAll(){
 }
 function startSync(){
   if(!sb||SYN.on)return;SYN.on=true;syncAll();startRealtime();
-  setInterval(()=>{if(!document.hidden)syncAll()},120000);
+  setInterval(()=>{if(!document.hidden)syncAll()},45000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncAll()});
   addEventListener('focus',syncAll);addEventListener('online',syncAll);
 }
 $('sy').onclick=()=>{if(SYN.on)syncAll();else toast('Log eerst in om te synchroniseren')};
@@ -715,22 +721,23 @@ $('c_v').textContent=VERSION;
 $('c_new').onclick=()=>banner({icon:'✨',title:'Wat is nieuw',to:VERSION,items:CHANGES,btn:'Sluiten'});
 applyUI(false);
 
-// ---- Geschiedenis (laatste 20 gekopieerde berichten, alleen lokaal)
-let HIST=[];try{HIST=JSON.parse(localStorage.getItem('ovb_hist')||'[]')}catch(e){}
+// ---- Geschiedenis (laatste 30 gekopieerde berichten, gedeeld)
+HIST=HIST.map(h=>h.id?h:{...h,id:nid(),u:h.u||Date.now()});
+const hlive=()=>live(HIST).sort((a,b)=>b.u-a.u);
 function addHist(txt,k){
-  if(!txt||!txt.trim()||(HIST[0]&&HIST[0].t===txt))return;
-  HIST.unshift({t:txt,k,u:Date.now()});HIST=HIST.slice(0,20);
-  try{localStorage.setItem('ovb_hist',JSON.stringify(HIST))}catch(e){}renderHist();
+  if(!txt||!txt.trim())return;const l=hlive();if(l[0]&&l[0].t===txt)return;
+  const h={id:nid(),t:txt,k,u:0};HIST.push(h);touch('hist',h);
+  hlive().slice(30).forEach(o=>{o.x=1;o.t='';touch('hist',o)});renderHist();
 }
 function renderHist(){
-  $('o_h').innerHTML=HIST.map((h,i)=>`<div class="hr"><div><b>${esc(h.k)}</b><span>${esc((h.t.split('\n').map(l=>l.replace(/^>\s?/,'').trim()).find(Boolean)||'').slice(0,70))}</span><small>${rel(h.u)}</small></div><div class="ha"><button class="cp" data-hs="${i}">Bewaar</button><button class="cp" data-hc="${i}">Kopieer</button></div></div>`).join('')||'<div class="empty">Nog niets gekopieerd.</div>';
+  $('o_h').innerHTML=hlive().map(h=>`<div class="hr"><div><b>${esc(h.k)}</b><span>${esc((h.t.split('\n').map(l=>l.replace(/^>\s?/,'').trim()).find(Boolean)||'').slice(0,70))}</span><small>${rel(h.u)}</small></div><div class="ha"><button class="cp" data-hs="${h.id}">Bewaar</button><button class="cp" data-hc="${h.id}">Kopieer</button></div></div>`).join('')||'<div class="empty">Nog niets gekopieerd.</div>';
 }
 $('o_h').onclick=async e=>{
   const c=e.target.closest('[data-hc]'),s2=e.target.closest('[data-hs]');
-  if(c){await copy(HIST[+c.dataset.hc].t);toast('Gekopieerd naar klembord')}
-  if(s2){const h=HIST[+s2.dataset.hs];nadd(h.k+' '+new Date(h.u).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'}),h.t);toast('Bewaard in Notepad')}
+  if(c){const h=HIST.find(x=>x.id===c.dataset.hc);if(h){await copy(h.t);toast('Gekopieerd naar klembord')}}
+  if(s2){const h=HIST.find(x=>x.id===s2.dataset.hs);if(h){nadd(h.k+' '+new Date(h.u).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'}),h.t);toast('Bewaard in Notepad')}}
 };
-$('o_hc').onclick=()=>{HIST=[];try{localStorage.removeItem('ovb_hist')}catch(e){}renderHist()};
+$('o_hc').onclick=()=>{live(HIST).forEach(h=>{h.x=1;h.t='';touch('hist',h)});renderHist()};
 
 // ---- Contacten (@namen)
 const nameOf=id=>{const c=live(CONT).find(c=>c.did===String(id));return c?c.naam:String(id)};
@@ -739,11 +746,24 @@ function renderCont(){
 }
 
 // ---- Overzicht: stortingen
+const sortedS=()=>live(STORT).slice().sort((a,b)=>a.t-b.t);
+function balAt(t){let v=null;for(const e of sortedS()){if(e.t<=t)v=e.amt;else break}return v}
+function logStort(lg){
+  const e={id:nid(),naam:lg.naam,amt:r2(lg.amt),min:lg.min||0,bruto:lg.bruto||0,tax:lg.tax||0,t:Date.now()};
+  STORT.push(e);touch('stort',e);renderLog();syncSoon();return e;
+}
+function autoLogCopy(c,list){
+  const al=$('s_al');if(!al||!al.checked)return;
+  list.forEach(x=>{if(x&&x.lg&&!x._lg){x._lg=true;logStort(x.lg);const i=c._a.indexOf(x),b=c.querySelector('[data-l="'+i+'"]');if(b){b.textContent='✓ Gelogd';b.disabled=true}}});
+}
 function renderLog(){
-  const rows=live(STORT).sort((a,b)=>b.t-a.t),wk=weekStart(),mo=new Date(new Date().getFullYear(),new Date().getMonth(),1).getTime();
-  let w=0,m=0,a=0;rows.forEach(r=>{a+=r.amt;if(r.t>=wk)w+=r.amt;if(r.t>=mo)m+=r.amt});
-  $('o_w').textContent=fmt(r2(w));$('o_m').textContent=fmt(r2(m));$('o_a').textContent=fmt(r2(a));
-  $('o_l').innerHTML=rows.map(r=>`<div class="lr"><div><b>${fmt(r.amt)}</b> <span>${esc(r.naam||'')}</span><small>${r.min?hm(r.min)+' · ':''}${new Date(r.t).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'})}</small></div><button class="x" data-ld="${r.id}" title="Verwijderen">✕</button></div>`).join('')||'<div class="empty">Nog geen stortingen gelogd.<br>Gebruik Log bij een stortingsbericht.</div>';
+  const asc=sortedS(),bal=asc.length?asc[asc.length-1].amt:0,wk=weekStart(),mo=new Date(new Date().getFullYear(),new Date().getMonth(),1).getTime();
+  const sg=v=>(v>=0?'+':'−')+fmt(Math.abs(v));
+  const dw=r2(bal-(balAt(wk-1)||0)),dm=r2(bal-(balAt(mo-1)||0));
+  $('o_a').textContent=fmt(bal);
+  [['o_w',dw],['o_m',dm]].forEach(([id,v])=>{const e=$(id);e.textContent=asc.length?sg(v):'—';e.className=v>0?'up':v<0?'dn':''});
+  const prev=new Map();asc.forEach((e,i)=>prev.set(e.id,i?asc[i-1].amt:null));
+  $('o_l').innerHTML=asc.slice().reverse().map(r=>{const p=prev.get(r.id),d=p===null?null:r2(r.amt-p);return `<div class="lr"><div><b>${fmt(r.amt)}</b> <span>${esc(r.naam||'')}</span><small>${d===null?'':sg(d)+' t.o.v. vorige · '}${r.bruto?'bericht '+fmt(r.bruto)+' · ':''}${new Date(r.t).toLocaleString('nl-NL',{dateStyle:'short',timeStyle:'short'})}</small></div><button class="x" data-ld="${r.id}" title="Verwijderen">✕</button></div>`}).join('')||'<div class="empty">Nog geen stortingen gelogd.<br>Gebruik Log bij een stortingsbericht.</div>';
   renderChart();dash();
 }
 $('o_l').onclick=e=>{const b=e.target.closest('[data-ld]');if(!b)return;const r=STORT.find(x=>x.id===b.dataset.ld);if(r){r.x=1;touch('stort',r);renderLog()}};
@@ -751,21 +771,22 @@ $('o_add').onclick=()=>{
   const a=parseAmt($('o_a1').value);
   if(!(a>0)){toast('Vul een geldig bedrag in, bijvoorbeeld 110.010,55');return}
   const [y,m,d]=($('o_d1').value||new Date().toLocaleDateString('sv-SE')).split('-').map(Number);
-  const e={id:nid(),naam:$('o_n1').value.trim()||S.naam||'Zelf',amt:a,min:0,t:new Date(y,m-1,d,12,0).getTime()};
+  const nw=new Date(),today=nw.getFullYear()===y&&nw.getMonth()===m-1&&nw.getDate()===d;
+  const e={id:nid(),naam:$('o_n1').value.trim()||S.naam||'Zelf',amt:a,min:0,t:today?Date.now():new Date(y,m-1,d,12,0).getTime()};
   STORT.push(e);touch('stort',e);$('o_a1').value='';renderLog();toast('Gelogd in Overzicht');
 };
 $('o_a1').addEventListener('keydown',e=>{if(e.key==='Enter')$('o_add').click()});
 $('o_clr').onclick=()=>{if(!live(STORT).length||!confirm('Alle gelogde stortingen wissen?'))return;live(STORT).forEach(r=>{r.x=1;touch('stort',r)});renderLog()};
 $('o_csv').onclick=()=>{
-  const q2=v=>'"'+String(v).replace(/"/g,'""')+'"';
-  const rows=live(STORT).sort((a,b)=>a.t-b.t).map(r=>[new Date(r.t).toLocaleString('nl-NL'),q2(r.naam||''),r2(r.amt).toFixed(2).replace('.',','),r.min].join(';'));
-  dl('stortingen-'+new Date().toLocaleDateString('sv-SE')+'.csv','\uFEFF'+['datum;naam;bedrag;minuten',...rows].join('\n'),'text/csv');
+  const q2=v=>'"'+String(v).replace(/"/g,'""')+'"',n2=v=>r2(v).toFixed(2).replace('.',',');
+  const rows=sortedS().map(r=>[new Date(r.t).toLocaleString('nl-NL'),q2(r.naam||''),n2(r.amt),n2(r.bruto||0),n2(r.tax||0),r.min||0].join(';'));
+  dl('stortingen-'+new Date().toLocaleDateString('sv-SE')+'.csv','\uFEFF'+['datum;naam;saldo;bericht;belasting;minuten',...rows].join('\n'),'text/csv');
 };
 document.addEventListener('click',e=>{
   const b=e.target.closest('[data-l]'),c=b&&b.closest('.out');if(!c)return;
   const x=c._a[+b.dataset.l];if(!x||!x.lg)return;
-  STORT.push({id:nid(),naam:x.lg.naam,amt:x.lg.amt,min:x.lg.min,t:Date.now()});touch('stort',STORT[STORT.length-1]);
-  renderLog();b.textContent='✓ Gelogd';b.disabled=true;toast('Gelogd in Overzicht');
+  if(x._lg){toast('Dit saldo is al gelogd');return}
+  x._lg=true;logStort(x.lg);b.textContent='✓ Gelogd';b.disabled=true;toast('Saldo gelogd in Overzicht');
 });
 
 // ---- Notepad
@@ -865,7 +886,7 @@ $('n_del').onclick=()=>{
 };
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'&&$('n').classList.contains('on')){e.preventDefault();ncommit(true)}});
 function refreshAll(){
-  nlist();renderLog();renderCont();renderStaff();tplList();
+  nlist();renderLog();renderCont();renderStaff();tplList();renderHist();
   const n=curN(),ae=document.activeElement;
   if(NID&&!n)nsel(pickN());
   else if(n&&ae!==$('n_b')&&ae!==$('n_t')&&ae!==$('n_lb')&&($('n_b').value!==n.b||$('n_t').value!==n.t||$('n_lb').value!==(n.f||'')))nsel(n.id);
@@ -876,14 +897,14 @@ function greet(){const h=new Date().getHours();return h<6?'Goedenacht':h<12?'Goe
 function clock(){const d=new Date();$('h_c').textContent=d.toLocaleTimeString('nl-NL',{hour:'2-digit',minute:'2-digit',second:'2-digit'});$('h_d').textContent=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});$('h_g').textContent=greet()}
 function dash(){
   $('h_n').textContent=S.naam?S.naam:'Welkom bij het OVB Panel';
-  const stf=staffStats(),miss=KEYS.filter(empty),all=live(NOTES),last=sortN(all)[0],wk=weekStart(),wsum=r2(live(STORT).filter(r=>r.t>=wk).reduce((a,r)=>a+r.amt,0));
+  const stf=staffStats(),miss=KEYS.filter(empty),all=live(NOTES),last=sortN(all)[0],wk=weekStart(),wsum=(sortedS().slice(-1)[0]||{}).amt||0;
   $('h_st').innerHTML=(miss.length?`<div class="si bad" data-go="c">⚠️ ${miss.length} instelling${miss.length>1?'en':''} nog leeg<span>Instellingen →</span></div>`:'<div class="si ok">✅ Instellingen compleet</div>')
-   +`<div class="si" data-go="o">💰 Gestort deze week<span>${fmt(wsum)}</span></div><div class="si" data-go="m">👥 ${stf.n} medewerker${stf.n===1?'':'s'}<span>${stf.w?stf.w+' let op':stf.s+' sancties'}</span></div><div class="si" data-go="n">📝 ${all.length} notitie${all.length===1?'':'s'}<span>${last?esc((last.t||'Naamloos').slice(0,26)):'—'}</span></div>`;
+   +`<div class="si" data-go="o">💰 Saldo<span>${fmt(wsum)}</span></div><div class="si" data-go="m">👥 ${stf.n} medewerker${stf.n===1?'':'s'}<span>${stf.w?stf.w+' let op':stf.s+' sancties'}</span></div><div class="si" data-go="n">📝 ${all.length} notitie${all.length===1?'':'s'}<span>${last?esc((last.t||'Naamloos').slice(0,26)):'—'}</span></div>`;
 }
 clock();setInterval(clock,1000);
 
 // ---- Formulieren onthouden + Wissen
-const FORM={s:['s_h','s_m','s_bt','s_av'],t:['t_k','t_s','t_dur','t_ts'],x:['x_c','x_rd'],k:['k_t','k_n','k_r'],r:['r_u','r_h','r_d']};
+const FORM={s:['s_h','s_m','s_bt','s_av','s_al'],t:['t_k','t_s','t_dur','t_ts'],x:['x_c','x_rd'],k:['k_t','k_n','k_r'],r:['r_u','r_h','r_d']};
 const gv=id=>{const e=$(id);return e.type==='checkbox'?e.checked:e.value};
 const sv2=(id,v)=>{const e=$(id);if(e.type==='checkbox')e.checked=!!v;else if(typeof v==='string')e.value=v};
 const FD={};Object.values(FORM).flat().forEach(id=>FD[id]=gv(id));
@@ -1101,7 +1122,7 @@ $('p_ex').onclick=()=>{
   tplList();toast(n?n+' voorbeeldsjablonen toegevoegd':'De voorbeelden staan er al');
 };
 
-// ---- Grafiek stortingen (lijngrafiek)
+// ---- Grafiek: het saldo in de tijd (blijft gelijk tot de volgende storting)
 let chartMode='w';
 const shortAmt=v=>v>=1e6?(v/1e6).toFixed(1).replace('.0','')+'M':v>=1e3?(v/1e3).toFixed(v>=1e4?0:1).replace('.0','')+'K':String(Math.round(v));
 const niceMax=v=>{const p=Math.pow(10,Math.floor(Math.log10(v))),f=v/p;return(f<=1?1:f<=2?2:f<=5?5:10)*p};
@@ -1114,19 +1135,23 @@ function smooth(pts,top,base){
   return d;
 }
 function renderChart(){
-  const rows=live(STORT),now=new Date(),bk=[];
-  if(chartMode==='w'){const ws=new Date(weekStart());for(let i=7;i>=0;i--){const s=new Date(ws);s.setDate(s.getDate()-7*i);const e=new Date(s);e.setDate(e.getDate()+7);bk.push({s:s.getTime(),e:e.getTime(),l:s.getDate()+'/'+(s.getMonth()+1)})}}
-  else for(let i=5;i>=0;i--){const s=new Date(now.getFullYear(),now.getMonth()-i,1),e=new Date(now.getFullYear(),now.getMonth()-i+1,1);bk.push({s:s.getTime(),e:e.getTime(),l:s.toLocaleDateString('nl-NL',{month:'short'})})}
-  bk.forEach(b=>{b.v=r2(rows.filter(r=>r.t>=b.s&&r.t<b.e).reduce((a,r)=>a+r.amt,0))});
-  const W=320,H=150,L=36,R=12,T=14,B=26,pw=W-L-R,ph=H-T-B,mx=Math.max(...bk.map(b=>b.v)),nm=mx>0?niceMax(mx):1;
-  const xs=i=>L+i*pw/(bk.length-1),ys=v=>T+ph-(v/nm)*ph,pts=bk.map((b,i)=>[xs(i),ys(b.v)]),base=T+ph;
-  const line=smooth(pts,T,base),area=line+` L${xs(bk.length-1).toFixed(1)} ${base} L${xs(0).toFixed(1)} ${base} Z`;
-  const imax=bk.findIndex(b=>b.v===mx),show2=new Set([bk.length-1,imax]);
-  $('o_ch').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Stortingen per ${chartMode==='w'?'week':'maand'}"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--am);stop-opacity:.45"/><stop offset="1" style="stop-color:var(--am);stop-opacity:0"/></linearGradient></defs>`
+  const now=Date.now(),D=new Date(),bk=[];
+  if(chartMode==='d'){for(let i=13;i>=0;i--){const s=new Date(D.getFullYear(),D.getMonth(),D.getDate()-i),e=new Date(D.getFullYear(),D.getMonth(),D.getDate()-i+1);bk.push({e:e.getTime(),l:s.getDate()+'/'+(s.getMonth()+1)})}}
+  else if(chartMode==='w'){const ws=new Date(weekStart());for(let i=7;i>=0;i--){const s=new Date(ws);s.setDate(s.getDate()-7*i);const e=new Date(s);e.setDate(e.getDate()+7);bk.push({e:e.getTime(),l:s.getDate()+'/'+(s.getMonth()+1)})}}
+  else for(let i=5;i>=0;i--){const s=new Date(D.getFullYear(),D.getMonth()-i,1),e=new Date(D.getFullYear(),D.getMonth()-i+1,1);bk.push({e:e.getTime(),l:s.toLocaleDateString('nl-NL',{month:'short'})})}
+  bk.forEach(b=>{b.v=balAt(Math.min(b.e-1,now))});
+  const vals=bk.map(b=>b.v).filter(v=>v!==null),mx=vals.length?Math.max(...vals):0,nm=mx>0?niceMax(mx):1;
+  const W=320,H=150,L=36,R=12,T=14,B=26,pw=W-L-R,ph=H-T-B,n=bk.length;
+  const xs=i=>L+i*pw/(n-1),ys=v=>T+ph-(v/nm)*ph,base=T+ph;
+  const pts=bk.map((b,i)=>b.v===null?null:[xs(i),ys(b.v)]),valid=pts.filter(Boolean);
+  const line=valid.length>1?smooth(valid,T,base):'',area=line?line+` L${valid[valid.length-1][0].toFixed(1)} ${base} L${valid[0][0].toFixed(1)} ${base} Z`:'';
+  const imax=bk.findIndex(b=>b.v===mx),show2=new Set([n-1,imax]);
+  $('o_ch').innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Saldo per ${chartMode==='d'?'dag':chartMode==='w'?'week':'maand'}"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--am);stop-opacity:.45"/><stop offset="1" style="stop-color:var(--am);stop-opacity:0"/></linearGradient></defs>`
    +[0,1,2,3,4].map(k=>{const y=T+ph-ph*k/4;return `<line class="gl" x1="${L}" x2="${W-R}" y1="${y}" y2="${y}"/><text class="gy" x="${L-5}" y="${y+3}" text-anchor="end">${shortAmt(nm*k/4)}</text>`}).join('')
-   +(mx>0?`<path class="cg-area" d="${area}" fill="url(#cg)"/><path class="cg-line" pathLength="1" d="${line}"/>`:`<text x="${W/2}" y="${T+ph/2}" text-anchor="middle" class="gy" style="font-size:10px">Nog geen stortingen in deze periode</text>`)
-   +bk.map((b,i)=>`<text class="gy" x="${xs(i)}" y="${H-8}" text-anchor="middle">${esc(b.l)}</text>`).join('')
-   +(mx>0?bk.map((b,i)=>`<circle class="pt" style="animation-delay:${400+i*70}ms" cx="${xs(i).toFixed(1)}" cy="${ys(b.v).toFixed(1)}" r="3.5"><title>${esc(b.l)}: ${fmt(b.v)}</title></circle>${b.v&&show2.has(i)?`<text class="gy" style="fill:var(--tx);font-weight:700" x="${xs(i).toFixed(1)}" y="${(ys(b.v)-8).toFixed(1)}" text-anchor="middle">${shortAmt(b.v)}</text>`:''}`).join(''):'')
+   +(line?`<path class="cg-area" d="${area}" fill="url(#cg)"/><path class="cg-line" pathLength="1" d="${line}"/>`:'')
+   +(!vals.length?`<text x="${W/2}" y="${T+ph/2}" text-anchor="middle" class="gy" style="font-size:10px">Nog geen saldo gelogd</text>`:'')
+   +bk.map((b,i)=>(n>10&&i%2&&i!==n-1)?'':`<text class="gy" x="${xs(i)}" y="${H-8}" text-anchor="middle">${esc(b.l)}</text>`).join('')
+   +bk.map((b,i)=>b.v===null?'':`<circle class="pt" style="animation-delay:${400+i*60}ms" cx="${xs(i).toFixed(1)}" cy="${ys(b.v).toFixed(1)}" r="3.5"><title>${esc(b.l)}: saldo ${fmt(b.v)}</title></circle>${show2.has(i)?`<text class="gy" style="fill:var(--tx);font-weight:700" x="${xs(i).toFixed(1)}" y="${(ys(b.v)-8).toFixed(1)}" text-anchor="middle">${shortAmt(b.v)}</text>`:''}`).join('')
    +'</svg>';
 }
 seg('o_seg',v=>{chartMode=v;renderChart()});
